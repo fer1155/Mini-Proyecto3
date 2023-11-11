@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import modelo.Persona;
 
 public interface IPersonaDao {
-    public ArrayList<Persona> getPersonasPorTipo();
+    public ArrayList<Persona> getPersonasPorTipo(String tipo);
     public Persona getPersona(int personaId);
     public boolean addPersona(Persona persona);
     public boolean updatePersona(Persona persona);

@@ -17,6 +17,7 @@ public class PrincipalView extends JFrame{
     private ImageIcon imagenFondo;
     private JLabel titulo;
     private JButton botonRegistrarPersona;
+    private JButton botonMostrarPersona;
     
     //Constructor de la ventana Principal
     public PrincipalView(){
@@ -33,6 +34,7 @@ public class PrincipalView extends JFrame{
         establecerFondo();
         establecerTitulo();
         establecerBtonRegistrarPersona();
+        establecerBtonMostrarPersona();
     }
     
     private void establecerLayeredPanel() {
@@ -79,5 +81,22 @@ public class PrincipalView extends JFrame{
     
     public void addBtonRegistrarPersonaListener(ActionListener listenControl){
         botonRegistrarPersona.addActionListener(listenControl);
+    }
+    
+    private void establecerBtonMostrarPersona() {
+        botonMostrarPersona = new JButton("Mostrar Personas");
+        botonMostrarPersona.setFocusPainted(false);
+        botonMostrarPersona.setBounds(200, 350, 230, 60);  
+        botonMostrarPersona.setForeground(Color.WHITE);
+        botonMostrarPersona.setFont(new Font("Bernard MT Condensed", 0, 28));
+        Color colorFondoBtn = new Color(78, 39, 0);
+        botonMostrarPersona.setBackground(colorFondoBtn);
+        Color colorBorde = new Color(94, 94, 94);
+        botonMostrarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        layeredPane.add(botonMostrarPersona, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public void addBtonMostrarPersonaListener(ActionListener listenControl){
+        botonMostrarPersona.addActionListener(listenControl);
     }
 }

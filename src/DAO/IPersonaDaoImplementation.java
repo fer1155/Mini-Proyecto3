@@ -7,15 +7,18 @@ import modelo.Persona;
 
 
 public class IPersonaDaoImplementation implements IPersonaDao {
-    List<Estudiante> estudiantes;
+    ArrayList<Persona> estudiantes;
     
     public IPersonaDaoImplementation() {
         this.estudiantes = new ArrayList<>();
     }
     
     @Override
-    public ArrayList<Persona> getPersonasPorTipo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public ArrayList<Persona> getPersonasPorTipo(String tipo) {
+        if("Estudiante".equals(tipo)){
+            return estudiantes;
+        }
+        return null;
     }
 
     @Override
@@ -25,7 +28,10 @@ public class IPersonaDaoImplementation implements IPersonaDao {
 
     @Override
     public boolean addPersona(Persona persona) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if("Estudiante".equals(persona.getTipo())){
+            estudiantes.add((Estudiante) persona);
+        }
+        return true;
     }
 
     @Override
