@@ -8,7 +8,7 @@ public class RegistrarPersonaModel {
         this.modeloGeneral = modelo;
     }
 
-    public void registrar(Persona persona){
-        modeloGeneral.agregarPersona(persona);
+    public void registrar(Persona personaARegistrar){
+        modeloGeneral.agregarPersona(personaARegistrar);
     }
 }
