@@ -6,4 +6,5 @@ public class Estudiante extends Persona {
         super(NombreCompleto, numId, fechaDeNacimiento, direccion, telefono, tipoTelefono, "Estudiante");
     }
     
+    
 }
