@@ -46,7 +46,7 @@ public class MostrarPersonaController {
             }
             if(e.getActionCommand().equalsIgnoreCase("Buscar")){
                 String textoAMostrar = establecerInfoIndividual();
-                //this.vista.setCajaDeTextoPrueba(listadoEstudiantes);
+                vista.limpiarCampos();
                 JOptionPane.showMessageDialog(vista.obtenerPanel(), vista.ventanaEmergente(textoAMostrar), "Info", JOptionPane.PLAIN_MESSAGE);
             }
         }
@@ -91,26 +91,38 @@ public class MostrarPersonaController {
     
     private String establecerInfoIndividual(){
         String textoInfoGeneral = "";
+        boolean seEncontroLaPersona = false;
         
-        textoInfoGeneral += "--- ESTUDIANTES ---\n";
-        
-        /*
         ArrayList<Persona> estudiantes = modelo.mostrarListadoPersonas("Estudiante");
         for(Persona estudiante : estudiantes) {
-            if(!"".equals(vista.getCajaDeTextoNombre())){
-                if(vista.getCajaDeTextoNombre().equals(estudiante.getNombreCompleto()) && vista.getCajaDeTextoId().equals(estudiante.getNumId()) ){
-                    System.out.println("Hola1");
-                    textoInfoGeneral += estudiante + "\n";
-                } 
-            }else if(!"".equals(vista.getCajaDeTextoId())){
-                if(vista.getCajaDeTextoId().equals(estudiante.getNumId())){
-                    System.out.println("Hola2");
-                    textoInfoGeneral += estudiante + "\n";
-                } 
-            }
-                            
-        }*/
+            if(vista.getCajaDeTextoId().equals(estudiante.getNumId())){
+                textoInfoGeneral += "\nESTUDIANTE:\n\n";
+                textoInfoGeneral += estudiante + "\n\n";
+                seEncontroLaPersona = true; 
+            }                             
+        }
         
+        ArrayList<Persona> profesores = modelo.mostrarListadoPersonas("Profesor");
+        for(Persona profesor : profesores) {
+            if(vista.getCajaDeTextoId().equals(profesor.getNumId())){
+                textoInfoGeneral += "\nPROFESOR:\n\n";
+                textoInfoGeneral += profesor + "\n\n";
+                seEncontroLaPersona = true; 
+            }                             
+        }
+        
+        ArrayList<Persona> empleados = modelo.mostrarListadoPersonas("Empleado");
+        for(Persona empleado : empleados) {
+            if(vista.getCajaDeTextoId().equals(empleado.getNumId())){
+                textoInfoGeneral += "\nEMPLEADO:\n\n";
+                textoInfoGeneral += empleado + "\n\n";
+                seEncontroLaPersona = true; 
+            }                             
+        }
+        
+        if(seEncontroLaPersona == false){
+            textoInfoGeneral += "No se encontro a la persona con el Id " + vista.getCajaDeTextoId();
+        }
         
         return textoInfoGeneral;
     }

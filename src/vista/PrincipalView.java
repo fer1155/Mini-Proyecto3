@@ -18,6 +18,8 @@ public class PrincipalView extends JFrame{
     private JLabel titulo;
     private JButton botonRegistrarPersona;
     private JButton botonMostrarPersona;
+    private JButton botonActualizarPersona;
+    private JButton botonEliminarPersona;
     
     //Constructor de la ventana Principal
     public PrincipalView(){
@@ -35,6 +37,8 @@ public class PrincipalView extends JFrame{
         establecerTitulo();
         establecerBtonRegistrarPersona();
         establecerBtonMostrarPersona();
+        establecerBtonActualizarPersona();
+        establecerBtonEliminarPersona();
     }
     
     private void establecerLayeredPanel() {
@@ -98,5 +102,39 @@ public class PrincipalView extends JFrame{
     
     public void addBtonMostrarPersonaListener(ActionListener listenControl){
         botonMostrarPersona.addActionListener(listenControl);
+    }
+    
+    private void establecerBtonActualizarPersona() {
+        botonActualizarPersona = new JButton("Actualizar Persona");
+        botonActualizarPersona.setFocusPainted(false);
+        botonActualizarPersona.setBounds(200, 200, 230, 60);  
+        botonActualizarPersona.setForeground(Color.WHITE);
+        botonActualizarPersona.setFont(new Font("Bernard MT Condensed", 0, 28));
+        Color colorFondoBtn = new Color(78, 39, 0);
+        botonActualizarPersona.setBackground(colorFondoBtn);
+        Color colorBorde = new Color(94, 94, 94);
+        botonActualizarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        layeredPane.add(botonActualizarPersona, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public void addBtonActualizarPersonaListener(ActionListener listenControl){
+        botonActualizarPersona.addActionListener(listenControl);
+    }
+    
+    private void establecerBtonEliminarPersona() {
+        botonEliminarPersona = new JButton("Eliminar Persona");
+        botonEliminarPersona.setFocusPainted(false);
+        botonEliminarPersona.setBounds(550, 200, 230, 60);  
+        botonEliminarPersona.setForeground(Color.WHITE);
+        botonEliminarPersona.setFont(new Font("Bernard MT Condensed", 0, 28));
+        Color colorFondoBtn = new Color(78, 39, 0);
+        botonEliminarPersona.setBackground(colorFondoBtn);
+        Color colorBorde = new Color(94, 94, 94);
+        botonEliminarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        layeredPane.add(botonEliminarPersona, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public void addBtonEliminarPersonaListener(ActionListener listenControl){
+        botonEliminarPersona.addActionListener(listenControl);
     }
 }

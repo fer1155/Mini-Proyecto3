@@ -216,6 +216,6 @@ public class RegistrarPersonaView extends JFrame {
         cajaTextoDireccion.setText("");
         cajaTextoTelefono.setText("");
         comboBoxTipoDeTelefono.setSelectedItem("");
-        comboBoxTipoDePersona.setSelectedItem("");;
+        comboBoxTipoDePersona.setSelectedItem("");
     }
 }
