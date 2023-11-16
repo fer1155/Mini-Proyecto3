@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Fernando/Documents/NetBeansProjects/Miniproyecto%20No.3/src/vista/EliminarPersonaView.java</file>
             <file>file:/C:/Users/Fernando/Documents/NetBeansProjects/Miniproyecto%20No.3/src/controlador/ActualizarPersonaController.java</file>
+            <file>file:/C:/Users/Fernando/Documents/NetBeansProjects/Miniproyecto%20No.3/src/modelo/ActualizarPersonaModel.java</file>
             <file>file:/C:/Users/Fernando/Documents/NetBeansProjects/Miniproyecto%20No.3/src/controlador/EliminarPersonaController.java</file>
             <file>file:/C:/Users/Fernando/Documents/NetBeansProjects/Miniproyecto%20No.3/src/vista/ActualizarPersonaView.java</file>
-            <file>file:/C:/Users/Fernando/Documents/NetBeansProjects/Miniproyecto%20No.3/src/vista/RegistrarPersonaView.java</file>
-            <file>file:/C:/Users/Fernando/Documents/NetBeansProjects/Miniproyecto%20No.3/src/controlador/RegistrarPersonaController.java</file>
         </group>
     </open-files>
 </project-private>

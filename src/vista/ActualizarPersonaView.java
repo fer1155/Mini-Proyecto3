@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
@@ -21,6 +22,16 @@ public class ActualizarPersonaView extends JFrame{
     private JButton botonCerrar;
     private JButton botonBuscar;
     private JTextField cajaTextoIdV1;
+    private JLabel textoV2;
+    private JTextField cajaTextoNombreV2;
+    private JTextField cajaTextoIdV2;
+    private JTextField cajaTextoFechaDeNacimientoV2;
+    private JTextField cajaTextoDireccionV2;
+    private JTextField cajaTextoTelefonoV2;
+    private JComboBox<String> comboBoxTipoDeTelefonoV2;
+    private JComboBox<String> comboBoxTipoDePersonaV2;
+    private JButton botonActualizar;
+    private JButton botonAtras;
     
     //Constructor de la ventana Actualizar Persona
     public ActualizarPersonaView(){
@@ -39,6 +50,16 @@ public class ActualizarPersonaView extends JFrame{
         establecerCajaDeTextoIdV1();
         establecerBtonBuscarV1();
         establecerBtonCerrarV1();
+        establecerTextoV2();
+        establecerCajaDeTextoNombreV2();
+        establecerCajaDeTextoIdV2();
+        establecerCajaDeTextoFechaDeNacimientoV2();
+        establecerCajaDeTextoDireccionV2();
+        establecerCajaDeTextoTelefonoV2();
+        establecerComboBoxDeTipoDeTelefonoV2();
+        establecerComboBoxDeTipoDePersonaV2();
+        establecerBtonActualizarV2(); 
+        establecerBtonAtras();
     }
     
     private void establecerLayeredPanel() {
@@ -119,5 +140,169 @@ public class ActualizarPersonaView extends JFrame{
     
     public void addBtonCerrarListenerV1(ActionListener listenControl){
         botonCerrar.addActionListener(listenControl);
+    }
+    
+    public void mostrarComponentesV1(boolean estado){
+        texto.setEnabled(estado);
+        texto.setVisible(estado);
+        botonCerrar.setEnabled(estado);
+        botonCerrar.setVisible(estado);
+        botonBuscar.setEnabled(estado);
+        botonBuscar.setVisible(estado);
+        cajaTextoIdV1.setEnabled(estado);
+        cajaTextoIdV1.setVisible(estado);
+    }
+    
+    private void establecerTextoV2() {
+        textoV2 = new JLabel("Directorio");
+        textoV2.setBounds(265, 20, 530, 120);
+        Color colorLetra = new Color(78, 39, 0);
+        textoV2.setForeground(colorLetra);
+        textoV2.setFont(new Font("Bernard MT Condensed", 1, 85));
+        layeredPane.add(textoV2, JLayeredPane.MODAL_LAYER);    
+    }
+    
+    private void establecerCajaDeTextoNombreV2() {
+        cajaTextoNombreV2 = new JTextField();
+        cajaTextoNombreV2.setBounds(100, 150, 140, 30);
+        cajaTextoNombreV2.setFont(new Font("Centaur", 1, 15));
+        Color colorBorde = new Color(94, 94, 94);
+        cajaTextoNombreV2.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
+        layeredPane.add(cajaTextoNombreV2, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getCajaDeTextoNombreV2(){
+        return cajaTextoNombreV2.getText();
+    }
+   
+    private void establecerCajaDeTextoIdV2() {
+        cajaTextoIdV2 = new JTextField();
+        cajaTextoIdV2.setBounds(100, 190, 140, 30);
+        cajaTextoIdV2.setFont(new Font("Centaur", 1, 15));
+        Color colorBorde = new Color(94, 94, 94);
+        cajaTextoIdV2.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
+        layeredPane.add(cajaTextoIdV2, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getCajaDeTextoIdV2(){
+        return cajaTextoIdV2.getText();
+    }
+    
+    private void establecerCajaDeTextoFechaDeNacimientoV2() {
+        cajaTextoFechaDeNacimientoV2= new JTextField();
+        cajaTextoFechaDeNacimientoV2.setBounds(100, 230, 140, 30);
+        cajaTextoFechaDeNacimientoV2.setFont(new Font("Centaur", 1, 15));
+        Color colorBorde = new Color(94, 94, 94);
+        cajaTextoFechaDeNacimientoV2.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
+        layeredPane.add(cajaTextoFechaDeNacimientoV2, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getCajaDeTextoFechaDeNacimientoV2(){
+        return cajaTextoFechaDeNacimientoV2.getText();
+    }
+    
+    private void establecerCajaDeTextoDireccionV2() {
+        cajaTextoDireccionV2 = new JTextField();
+        cajaTextoDireccionV2.setBounds(100, 270, 140, 30);
+        cajaTextoDireccionV2.setFont(new Font("Centaur", 1, 15));
+        Color colorBorde = new Color(94, 94, 94);
+        cajaTextoDireccionV2.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
+        layeredPane.add(cajaTextoDireccionV2, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getCajaDeTextoDireccionV2(){
+        return cajaTextoDireccionV2.getText();
+    }
+    
+    private void establecerCajaDeTextoTelefonoV2() {
+        cajaTextoTelefonoV2 = new JTextField();
+        cajaTextoTelefonoV2.setBounds(100, 310, 140, 30);
+        cajaTextoTelefonoV2.setFont(new Font("Centaur", 1, 15));
+        Color colorBorde = new Color(94, 94, 94);
+        cajaTextoTelefonoV2.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
+        layeredPane.add(cajaTextoTelefonoV2, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getCajaDeTextoTelefonoV2(){
+        return cajaTextoTelefonoV2.getText();
+    }
+    
+    private void establecerComboBoxDeTipoDeTelefonoV2(){
+        String[] opciones = {"", "MOVIL", "CASA", "OFICINA"};
+        comboBoxTipoDeTelefonoV2 = new JComboBox<>(opciones);
+        comboBoxTipoDeTelefonoV2.setBounds(350, 310, 230, 40);
+        layeredPane.add(comboBoxTipoDeTelefonoV2, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getComboBoxTipoDeTelefonoV2(){
+        return (String) comboBoxTipoDeTelefonoV2.getSelectedItem();
+    }
+    
+    private void establecerComboBoxDeTipoDePersonaV2(){
+        String[] opciones = {"","ESTUDIANTE", "PROFESOR", "EMPLEADO"};
+        comboBoxTipoDePersonaV2 = new JComboBox<>(opciones);
+        comboBoxTipoDePersonaV2.setBounds(550, 250, 230, 40);
+        layeredPane.add(comboBoxTipoDePersonaV2, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getComboBoxTipoDePersonaV2(){
+        return (String) comboBoxTipoDePersonaV2.getSelectedItem();
+    }
+    
+    private void establecerBtonActualizarV2() {
+        botonActualizar = new JButton("Actualizar");
+        botonActualizar.setFocusPainted(false);
+        botonActualizar.setBounds(550, 450, 230, 60);  
+        botonActualizar.setForeground(Color.WHITE);
+        botonActualizar.setFont(new Font("Bernard MT Condensed", 0, 28));
+        Color colorFondoBtn = new Color(78, 39, 0);
+        botonActualizar.setBackground(colorFondoBtn);
+        Color colorBorde = new Color(94, 94, 94);
+        botonActualizar.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        layeredPane.add(botonActualizar, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public void addBtonActualizarListener(ActionListener listenControl){
+        botonActualizar.addActionListener(listenControl);
+    }
+    
+    private void establecerBtonAtras() {
+        botonAtras = new JButton("Atras");
+        botonAtras.setFocusPainted(false);
+        botonAtras.setBounds(200, 450, 230, 60);  
+        botonAtras.setForeground(Color.WHITE);
+        botonAtras.setFont(new Font("Bernard MT Condensed", 0, 28));
+        Color colorFondoBtn = new Color(78, 39, 0);
+        botonAtras.setBackground(colorFondoBtn);
+        Color colorBorde = new Color(94, 94, 94);
+        botonAtras.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        layeredPane.add(botonAtras, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public void addBtonAtrasListener(ActionListener listenControl){
+        botonAtras.addActionListener(listenControl);
+    }
+    
+    public void mostrarComponentesV2(boolean estado){
+        textoV2.setEnabled(estado);
+        textoV2.setVisible(estado);
+        cajaTextoNombreV2.setEnabled(estado);
+        cajaTextoNombreV2.setVisible(estado);
+        cajaTextoIdV2.setEnabled(estado);
+        cajaTextoIdV2.setVisible(estado);
+        cajaTextoFechaDeNacimientoV2.setEnabled(estado);
+        cajaTextoFechaDeNacimientoV2.setVisible(estado);
+        cajaTextoDireccionV2.setEnabled(estado);
+        cajaTextoDireccionV2.setVisible(estado);
+        cajaTextoTelefonoV2.setEnabled(estado);
+        cajaTextoTelefonoV2.setVisible(estado);
+        comboBoxTipoDeTelefonoV2.setEnabled(estado);
+        comboBoxTipoDeTelefonoV2.setVisible(estado);
+        comboBoxTipoDePersonaV2.setEnabled(estado);
+        comboBoxTipoDePersonaV2.setVisible(estado);
+        botonActualizar.setEnabled(estado);
+        botonActualizar.setVisible(estado);
+        botonAtras.setEnabled(estado);
+        botonAtras.setVisible(estado);
     }
 }
