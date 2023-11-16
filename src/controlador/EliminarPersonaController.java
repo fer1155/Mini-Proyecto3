@@ -2,14 +2,14 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import modelo.ActualizarPersonaModel;
-import vista.ActualizarPersonaView;
+import modelo.EliminarPersonaModel;
+import vista.EliminarPersonaView;
 
 public class EliminarPersonaController {
-    private ActualizarPersonaView vista;
-    private ActualizarPersonaModel modelo;
+    private EliminarPersonaView vista;
+    private EliminarPersonaModel modelo;
 
-    public EliminarPersonaController(ActualizarPersonaView vista, ActualizarPersonaModel modelo) {
+    public EliminarPersonaController(EliminarPersonaView vista, EliminarPersonaModel modelo) {
         this.vista = vista;
         this.modelo = modelo;
         vista.setVisible(true);

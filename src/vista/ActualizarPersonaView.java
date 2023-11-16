@@ -10,14 +10,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class ActualizarPersonaView extends JFrame{
     private JLayeredPane layeredPane;
     private JPanel panel;
     private ImageIcon imagenFondo;
-    private JLabel titulo;
+    private JLabel texto;
     private JButton botonCerrar;
+    private JButton botonBuscar;
+    private JTextField cajaTextoIdV1;
     
     //Constructor de la ventana Actualizar Persona
     public ActualizarPersonaView(){
@@ -32,8 +35,10 @@ public class ActualizarPersonaView extends JFrame{
         establecerLayeredPanel();
         establecerPanel();
         establecerFondo();
-        establecerTitulo();
-        establecerBtonCerrar();
+        establecerTextoV1();
+        establecerCajaDeTextoIdV1();
+        establecerBtonBuscarV1();
+        establecerBtonCerrarV1();
     }
     
     private void establecerLayeredPanel() {
@@ -60,16 +65,46 @@ public class ActualizarPersonaView extends JFrame{
         layeredPane.add(etiquetaFondo, JLayeredPane.PALETTE_LAYER);
     }
         
-    private void establecerTitulo() {
-        titulo = new JLabel("Directorio");
-        titulo.setBounds(265, 20, 530, 120);
+    private void establecerTextoV1() {
+        texto = new JLabel("Directorio");
+        texto.setBounds(265, 20, 530, 120);
         Color colorLetra = new Color(78, 39, 0);
-        titulo.setForeground(colorLetra);
-        titulo.setFont(new Font("Bernard MT Condensed", 1, 85));
-        layeredPane.add(titulo, JLayeredPane.MODAL_LAYER);    
+        texto.setForeground(colorLetra);
+        texto.setFont(new Font("Bernard MT Condensed", 1, 85));
+        layeredPane.add(texto, JLayeredPane.MODAL_LAYER);    
     }
     
-    private void establecerBtonCerrar() {
+    private void establecerCajaDeTextoIdV1() {
+        cajaTextoIdV1 = new JTextField();
+        cajaTextoIdV1.setBounds(100, 190, 140, 30);
+        cajaTextoIdV1.setFont(new Font("Centaur", 1, 15));
+        Color colorBorde = new Color(94, 94, 94);
+        cajaTextoIdV1.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
+        layeredPane.add(cajaTextoIdV1, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getCajaDeTextoIdV1(){
+        return cajaTextoIdV1.getText();
+    }
+    
+    private void establecerBtonBuscarV1() {
+        botonBuscar = new JButton("Buscar");
+        botonBuscar.setFocusPainted(false);
+        botonBuscar.setBounds(400, 450, 230, 60);  
+        botonBuscar.setForeground(Color.WHITE);
+        botonBuscar.setFont(new Font("Bernard MT Condensed", 0, 28));
+        Color colorFondoBtn = new Color(78, 39, 0);
+        botonBuscar.setBackground(colorFondoBtn);
+        Color colorBorde = new Color(94, 94, 94);
+        botonBuscar.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        layeredPane.add(botonBuscar, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public void addBtonBuscarListenerV1(ActionListener listenControl){
+        botonBuscar.addActionListener(listenControl);
+    }
+    
+    private void establecerBtonCerrarV1() {
         botonCerrar = new JButton("Cerrar");
         botonCerrar.setFocusPainted(false);
         botonCerrar.setBounds(200, 450, 230, 60);  
@@ -82,7 +117,7 @@ public class ActualizarPersonaView extends JFrame{
         layeredPane.add(botonCerrar, JLayeredPane.MODAL_LAYER);
     }
     
-    public void addBtonCerrarListener(ActionListener listenControl){
+    public void addBtonCerrarListenerV1(ActionListener listenControl){
         botonCerrar.addActionListener(listenControl);
     }
 }
