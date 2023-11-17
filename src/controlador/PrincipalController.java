@@ -3,10 +3,12 @@ package controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.ActualizarPersonaModel;
+import modelo.EliminarPersonaModel;
 import modelo.MostrarPersonaModel;
 import modelo.PrincipalModel;
 import modelo.RegistrarPersonaModel;
 import vista.ActualizarPersonaView;
+import vista.EliminarPersonaView;
 import vista.MostrarPersonaView;
 import vista.PrincipalView;
 import vista.RegistrarPersonaView;
@@ -24,6 +26,9 @@ public class PrincipalController {
     private ActualizarPersonaView vistaActualizarPersona;
     private ActualizarPersonaModel modeloActualizarPersona;
     private ActualizarPersonaController controladorActualizarPersona;
+    private EliminarPersonaView vistaEliminarPersona;
+    private EliminarPersonaModel modeloEliminarPersona;
+    private EliminarPersonaController controladorEliminarPersona;
     
     public PrincipalController(PrincipalView vista, PrincipalModel modelo) {
         this.vista = vista;
@@ -58,9 +63,9 @@ public class PrincipalController {
             }
             
             if(e.getActionCommand().equalsIgnoreCase("Eliminar Persona")){
-                vistaActualizarPersona = new ActualizarPersonaView();
-                modeloActualizarPersona = new ActualizarPersonaModel(modelo);
-                controladorActualizarPersona = new ActualizarPersonaController(vistaActualizarPersona, modeloActualizarPersona);
+                vistaEliminarPersona = new EliminarPersonaView();
+                modeloEliminarPersona = new EliminarPersonaModel(modelo);
+                controladorEliminarPersona = new EliminarPersonaController(vistaEliminarPersona, modeloEliminarPersona);
             }
         }   
     }

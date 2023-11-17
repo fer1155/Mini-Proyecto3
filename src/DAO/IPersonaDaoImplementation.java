@@ -22,19 +22,19 @@ public class IPersonaDaoImplementation implements IPersonaDao {
     @Override
     public boolean addPersona(Persona persona) {
         if("Estudiante".equals(persona.getTipo())){
-            estudiantes.add((Estudiante) persona);
+            estudiantes.add(persona);
             for(Persona elemento:estudiantes){
                 System.out.println(elemento);
             }
             return true;
         }else if("Profesor".equals(persona.getTipo())){
-            profesores.add((Profesor) persona);
+            profesores.add(persona);
             for(Persona elemento:profesores){
                 System.out.println(elemento);
             }
             return true;
         }else if("Empleado".equals(persona.getTipo())){
-            empleados.add((Empleado) persona);
+            empleados.add(persona);
             for(Persona elemento:empleados){
                 System.out.println(elemento);
             }
@@ -80,25 +80,43 @@ public class IPersonaDaoImplementation implements IPersonaDao {
     }
 
     @Override
-    public boolean updatePersona(Persona personaConDatosActualizados, String IdPersonaVieja) {
-        for(int i = 0; i<estudiantes.size(); i++) {
+    public boolean updatePersona(Persona personaConDatosActualizados, String tipoViejo, String IdPersonaVieja) {
+        for(int i = 0; i < estudiantes.size(); i++) {
             if(IdPersonaVieja.equals(estudiantes.get(i).getNumId())){
-                estudiantes.set(i, personaConDatosActualizados);
-                return true;
+                if(estudiantes.get(i).getTipo().equals(tipoViejo)){
+                    estudiantes.set(i, personaConDatosActualizados);
+                    return true;
+                }else{
+                    estudiantes.remove(estudiantes.get(i));
+                    addPersona(personaConDatosActualizados);
+                    return true;
+                }
             }                            
         }
         
         for(int i = 0; i < profesores.size(); i++) {
             if(IdPersonaVieja.equals(profesores.get(i).getNumId())){
-                profesores.set(i, personaConDatosActualizados);
-                return true;
+                if(profesores.get(i).getTipo().equals(tipoViejo)){
+                    profesores.set(i, personaConDatosActualizados);
+                    return true;
+                }else{
+                    profesores.remove(profesores.get(i));
+                    addPersona(personaConDatosActualizados);
+                    return true;
+                }
             }                            
         }
         
         for(int i = 0; i < empleados.size(); i++) {
             if(IdPersonaVieja.equals(empleados.get(i).getNumId())){
-                empleados.set(i, personaConDatosActualizados);
-                return true;
+                if(empleados.get(i).getTipo().equals(tipoViejo)){
+                    empleados.set(i, personaConDatosActualizados);
+                    return true;
+                }else{
+                    empleados.remove(empleados.get(i));
+                    addPersona(personaConDatosActualizados);
+                    return true;
+                }
             }                            
         }
         
@@ -106,8 +124,29 @@ public class IPersonaDaoImplementation implements IPersonaDao {
     }
 
     @Override
-    public boolean deletePersona(Persona persona) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
+    public boolean deletePersona(String idPersonaAEliminar) {
+        
+        for(Persona estudiante : estudiantes) {
+            if(idPersonaAEliminar.equals(estudiante.getNumId())){
+                estudiantes.remove(estudiante);
+                return true;
+            }                            
+        }
+        
+        for(Persona profesor : profesores) {
+            if(idPersonaAEliminar.equals(profesor.getNumId())){
+                profesores.remove(profesor);
+                return true;
+            }                            
+        }
+        
+        for(Persona empleado : empleados) {
+            if(idPersonaAEliminar.equals(empleado.getNumId())){
+                empleados.remove(empleado);
+                return true;
+            }                            
+        }
+        
+        return false;
+    }   
 }

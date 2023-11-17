@@ -23,8 +23,12 @@ public class PrincipalModel {
         return this.personaDao.getPersona(id);
     }
     
-    public boolean actualizarPersona(Persona persona, String idViejo){
-        return this.personaDao.updatePersona(persona, idViejo);
+    public boolean actualizarPersona(Persona persona, String tipoViejo, String IdPersonaVieja){
+        return this.personaDao.updatePersona(persona, tipoViejo, IdPersonaVieja);
+    }
+    
+    public boolean deletePersona(String id){
+        return this.personaDao.deletePersona(id);
     }
 }
 

@@ -8,6 +8,7 @@ import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 import modelo.Empleado;
 import modelo.Estudiante;
+import modelo.Persona;
 import modelo.Profesor;
 import vista.RegistrarPersonaView;
 import modelo.RegistrarPersonaModel;
@@ -82,18 +83,24 @@ public class RegistrarPersonaController {
     }
     
     private void registrarPorTipoDePersona(String tipoDePersona){
-        if("ESTUDIANTE".equals(tipoDePersona)){
-            Estudiante estudiante = new Estudiante(vista.getCajaDeTextoNombre(), vista.getCajaDeTextoId(), vista.getCajaDeTextoFechaDeNacimiento(), vista.getCajaDeTextoDireccion(), vista.getCajaDeTextoDireccion2(), vista.getCajaDeTextoTelefono1(), vista.getComboBoxTipoDeTelefono1(), vista.getCajaDeTextoTelefono2(), vista.getComboBoxTipoDeTelefono2(), vista.getCajaDeTextoTelefono3(), vista.getComboBoxTipoDeTelefono3());
-            modelo.registrar(estudiante);
-            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Se registro correctamente al estudiante", "Todo claro", JOptionPane.INFORMATION_MESSAGE);
-        }else if("PROFESOR".equals(tipoDePersona)){
-            Profesor profesor = new Profesor(vista.getCajaDeTextoNombre(), vista.getCajaDeTextoId(), vista.getCajaDeTextoFechaDeNacimiento(), vista.getCajaDeTextoDireccion(),vista.getCajaDeTextoDireccion2(), vista.getCajaDeTextoTelefono1(), vista.getComboBoxTipoDeTelefono1(), vista.getCajaDeTextoTelefono2(), vista.getComboBoxTipoDeTelefono2(), vista.getCajaDeTextoTelefono3(), vista.getComboBoxTipoDeTelefono3());
-            modelo.registrar(profesor);
-            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Se registro correctamente al Profesor", "Todo claro", JOptionPane.INFORMATION_MESSAGE);
-        }else if("EMPLEADO".equals(tipoDePersona)){
-            Empleado empleado = new Empleado(vista.getCajaDeTextoNombre(), vista.getCajaDeTextoId(), vista.getCajaDeTextoFechaDeNacimiento(), vista.getCajaDeTextoDireccion(),vista.getCajaDeTextoDireccion2(), vista.getCajaDeTextoTelefono1(), vista.getComboBoxTipoDeTelefono1(), vista.getCajaDeTextoTelefono2(), vista.getComboBoxTipoDeTelefono2(), vista.getCajaDeTextoTelefono3(), vista.getComboBoxTipoDeTelefono3());
-            modelo.registrar(empleado);
-            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Se registro correctamente al Empleado", "Todo claro", JOptionPane.INFORMATION_MESSAGE);
+        Persona persona = modelo.getPersona(vista.getCajaDeTextoId());
+        
+        if(persona == null){
+            if("ESTUDIANTE".equals(tipoDePersona)){
+                Estudiante estudiante = new Estudiante(vista.getCajaDeTextoNombre(), vista.getCajaDeTextoId(), vista.getCajaDeTextoFechaDeNacimiento(), vista.getCajaDeTextoDireccion(), vista.getCajaDeTextoDireccion2(), vista.getCajaDeTextoTelefono1(), vista.getComboBoxTipoDeTelefono1(), vista.getCajaDeTextoTelefono2(), vista.getComboBoxTipoDeTelefono2(), vista.getCajaDeTextoTelefono3(), vista.getComboBoxTipoDeTelefono3());
+                modelo.registrar(estudiante);
+                JOptionPane.showMessageDialog(vista.obtenerPanel(), "Se registro correctamente al estudiante", "Todo claro", JOptionPane.INFORMATION_MESSAGE);
+            }else if("PROFESOR".equals(tipoDePersona)){
+                Profesor profesor = new Profesor(vista.getCajaDeTextoNombre(), vista.getCajaDeTextoId(), vista.getCajaDeTextoFechaDeNacimiento(), vista.getCajaDeTextoDireccion(),vista.getCajaDeTextoDireccion2(), vista.getCajaDeTextoTelefono1(), vista.getComboBoxTipoDeTelefono1(), vista.getCajaDeTextoTelefono2(), vista.getComboBoxTipoDeTelefono2(), vista.getCajaDeTextoTelefono3(), vista.getComboBoxTipoDeTelefono3());
+                modelo.registrar(profesor);
+                JOptionPane.showMessageDialog(vista.obtenerPanel(), "Se registro correctamente al Profesor", "Todo claro", JOptionPane.INFORMATION_MESSAGE);
+            }else if("EMPLEADO".equals(tipoDePersona)){
+                Empleado empleado = new Empleado(vista.getCajaDeTextoNombre(), vista.getCajaDeTextoId(), vista.getCajaDeTextoFechaDeNacimiento(), vista.getCajaDeTextoDireccion(),vista.getCajaDeTextoDireccion2(), vista.getCajaDeTextoTelefono1(), vista.getComboBoxTipoDeTelefono1(), vista.getCajaDeTextoTelefono2(), vista.getComboBoxTipoDeTelefono2(), vista.getCajaDeTextoTelefono3(), vista.getComboBoxTipoDeTelefono3());
+                modelo.registrar(empleado);
+                JOptionPane.showMessageDialog(vista.obtenerPanel(), "Se registro correctamente al Empleado", "Todo claro", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }else{
+            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Ya existe el id suministrado", "Alerta", JOptionPane.WARNING_MESSAGE);
         }
     }
     
