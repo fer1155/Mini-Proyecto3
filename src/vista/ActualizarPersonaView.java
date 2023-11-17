@@ -32,6 +32,11 @@ public class ActualizarPersonaView extends JFrame{
     private JComboBox<String> comboBoxTipoDePersonaV2;
     private JButton botonActualizar;
     private JButton botonAtras;
+    private JTextField cajaTextoDireccion2V2;
+    private JComboBox<String> comboBoxTipoDeTelefono2V2;
+    private JTextField cajaTextoTelefono2V2;
+    private JTextField cajaTextoTelefono3V2;
+    private JComboBox<String> comboBoxTipoDeTelefono3V2;
     
     //Constructor de la ventana Actualizar Persona
     public ActualizarPersonaView(){
@@ -55,8 +60,13 @@ public class ActualizarPersonaView extends JFrame{
         establecerCajaDeTextoIdV2();
         establecerCajaDeTextoFechaDeNacimientoV2();
         establecerCajaDeTextoDireccionV2();
+        establecerCajaDeTextoDireccion2V2();
         establecerCajaDeTextoTelefonoV2();
         establecerComboBoxDeTipoDeTelefonoV2();
+        establecerCajaDeTextoTelefono2V2();
+        establecerComboBoxDeTipoDeTelefono2V2();
+        establecerCajaDeTextoTelefono3V2();
+        establecerComboBoxDeTipoDeTelefono3V2();
         establecerComboBoxDeTipoDePersonaV2();
         establecerBtonActualizarV2(); 
         establecerBtonAtras();
@@ -214,6 +224,19 @@ public class ActualizarPersonaView extends JFrame{
         return cajaTextoDireccionV2.getText();
     }
     
+    private void establecerCajaDeTextoDireccion2V2() {
+        cajaTextoDireccion2V2 = new JTextField();
+        cajaTextoDireccion2V2.setBounds(260, 270, 140, 30);
+        cajaTextoDireccion2V2.setFont(new Font("Centaur", 1, 15));
+        Color colorBorde = new Color(94, 94, 94);
+        cajaTextoDireccion2V2.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
+        layeredPane.add(cajaTextoDireccion2V2, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getCajaDeTextoDireccion2V2(){
+        return cajaTextoDireccion2V2.getText();
+    }
+    
     private void establecerCajaDeTextoTelefonoV2() {
         cajaTextoTelefonoV2 = new JTextField();
         cajaTextoTelefonoV2.setBounds(100, 310, 140, 30);
@@ -230,12 +253,60 @@ public class ActualizarPersonaView extends JFrame{
     private void establecerComboBoxDeTipoDeTelefonoV2(){
         String[] opciones = {"", "MOVIL", "CASA", "OFICINA"};
         comboBoxTipoDeTelefonoV2 = new JComboBox<>(opciones);
-        comboBoxTipoDeTelefonoV2.setBounds(350, 310, 230, 40);
+        comboBoxTipoDeTelefonoV2.setBounds(100, 360, 230, 40);
         layeredPane.add(comboBoxTipoDeTelefonoV2, JLayeredPane.MODAL_LAYER);
     }
     
     public String getComboBoxTipoDeTelefonoV2(){
         return (String) comboBoxTipoDeTelefonoV2.getSelectedItem();
+    }
+    
+    private void establecerCajaDeTextoTelefono2V2() {
+        cajaTextoTelefono2V2 = new JTextField();
+        cajaTextoTelefono2V2.setBounds(250, 310, 140, 30);
+        cajaTextoTelefono2V2.setFont(new Font("Centaur", 1, 15));
+        Color colorBorde = new Color(94, 94, 94);
+        cajaTextoTelefono2V2.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
+        layeredPane.add(cajaTextoTelefono2V2, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getCajaDeTextoTelefono2V2(){
+        return cajaTextoTelefono2V2.getText();
+    }
+    
+    private void establecerComboBoxDeTipoDeTelefono2V2(){
+        String[] opciones = {"", "MOVIL", "CASA", "OFICINA"};
+        comboBoxTipoDeTelefono2V2 = new JComboBox<>(opciones);
+        comboBoxTipoDeTelefono2V2.setBounds(340, 360, 230, 40);
+        layeredPane.add(comboBoxTipoDeTelefono2V2, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getComboBoxTipoDeTelefono2V2(){
+        return (String) comboBoxTipoDeTelefono2V2.getSelectedItem();
+    }
+    
+    private void establecerCajaDeTextoTelefono3V2() {
+        cajaTextoTelefono3V2 = new JTextField();
+        cajaTextoTelefono3V2.setBounds(400, 310, 140, 30);
+        cajaTextoTelefono3V2.setFont(new Font("Centaur", 1, 15));
+        Color colorBorde = new Color(94, 94, 94);
+        cajaTextoTelefono3V2.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
+        layeredPane.add(cajaTextoTelefono3V2, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getCajaDeTextoTelefono3V2(){
+        return cajaTextoTelefono3V2.getText();
+    }
+    
+    private void establecerComboBoxDeTipoDeTelefono3V2(){
+        String[] opciones = {"", "MOVIL", "CASA", "OFICINA"};
+        comboBoxTipoDeTelefono3V2 = new JComboBox<>(opciones);
+        comboBoxTipoDeTelefono3V2.setBounds(580, 360, 230, 40);
+        layeredPane.add(comboBoxTipoDeTelefono3V2, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getComboBoxTipoDeTelefono3V2(){
+        return (String) comboBoxTipoDeTelefono3V2.getSelectedItem();
     }
     
     private void establecerComboBoxDeTipoDePersonaV2(){
@@ -294,15 +365,41 @@ public class ActualizarPersonaView extends JFrame{
         cajaTextoFechaDeNacimientoV2.setVisible(estado);
         cajaTextoDireccionV2.setEnabled(estado);
         cajaTextoDireccionV2.setVisible(estado);
+        cajaTextoDireccion2V2.setEnabled(estado);
+        cajaTextoDireccion2V2.setVisible(estado);
         cajaTextoTelefonoV2.setEnabled(estado);
         cajaTextoTelefonoV2.setVisible(estado);
         comboBoxTipoDeTelefonoV2.setEnabled(estado);
         comboBoxTipoDeTelefonoV2.setVisible(estado);
+        cajaTextoTelefono2V2.setEnabled(estado);
+        cajaTextoTelefono2V2.setVisible(estado);
+        comboBoxTipoDeTelefono2V2.setEnabled(estado);
+        comboBoxTipoDeTelefono2V2.setVisible(estado);
+        cajaTextoTelefono3V2.setEnabled(estado);
+        cajaTextoTelefono3V2.setVisible(estado);
+        comboBoxTipoDeTelefono3V2.setEnabled(estado);
+        comboBoxTipoDeTelefono3V2.setVisible(estado);
         comboBoxTipoDePersonaV2.setEnabled(estado);
         comboBoxTipoDePersonaV2.setVisible(estado);
         botonActualizar.setEnabled(estado);
         botonActualizar.setVisible(estado);
         botonAtras.setEnabled(estado);
         botonAtras.setVisible(estado);
+    }
+    
+    public void limpiarComponentes(){
+        cajaTextoIdV1.setText("");
+        cajaTextoIdV2.setText("");
+        cajaTextoNombreV2.setText("");
+        cajaTextoFechaDeNacimientoV2.setText("");
+        cajaTextoDireccionV2.setText("");
+        cajaTextoTelefonoV2.setText("");
+        comboBoxTipoDeTelefonoV2.setSelectedItem("");
+        comboBoxTipoDePersonaV2.setSelectedItem("");
+        cajaTextoDireccion2V2.setText("");
+        comboBoxTipoDeTelefono2V2.setSelectedItem("");
+        cajaTextoTelefono2V2.setText("");
+        cajaTextoTelefono3V2.setText("");
+        comboBoxTipoDeTelefono3V2.setSelectedItem("");
     }
 }

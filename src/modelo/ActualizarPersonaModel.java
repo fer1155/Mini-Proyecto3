@@ -11,4 +11,8 @@ public class ActualizarPersonaModel {
     public Persona getPersona(String id){
         return modeloGeneral.getPersona(id);
     }
+    
+    public boolean actualizarPersona(Persona personaActualizar, String idPersonaVieja){
+        return modeloGeneral.actualizarPersona(personaActualizar, idPersonaVieja);
+    }
 }

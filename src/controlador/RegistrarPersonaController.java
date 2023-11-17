@@ -2,6 +2,9 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 import modelo.Empleado;
 import modelo.Estudiante;
@@ -18,8 +21,14 @@ public class RegistrarPersonaController {
         this.vista = vista;
         this.modelo = modelo;
         vista.setVisible(true);
+        vista.mostrarMasTelefonos(false);
+        vista.mostrarMasDirecciones(false);
         this.vista.addBtonRegistrarListener(new acciones());
         this.vista.addBtonCerrarListener(new acciones());
+        this.vista.addBtnMasTelefonosListener(new acciones2());
+        this.vista.addBtnMenosTelefonosListener(new acciones3());
+        this.vista.addBtnMasDireccionesListener(new acciones4());
+        this.vista.addBtnMenosDireccionesListener(new acciones5());
     }
 
     class acciones implements ActionListener {
@@ -47,32 +56,72 @@ public class RegistrarPersonaController {
         }else if(vista.getCajaDeTextoDireccion().isEmpty()){
             JOptionPane.showMessageDialog(vista.obtenerPanel(), "Rellene la direccion porfavor", "Alerta", JOptionPane.WARNING_MESSAGE);
             return true;
-        }else if(vista.getCajaDeTextoTelefono().isEmpty()){
+        }else if(vista.getCajaDeTextoTelefono1().isEmpty()){
             JOptionPane.showMessageDialog(vista.obtenerPanel(), "Rellene el telefono porfavor", "Alerta", JOptionPane.WARNING_MESSAGE);
             return true;
-        }else if("".equals(vista.getComboBoxTipoDeTelefono())){
+        }else if("".equals(vista.getComboBoxTipoDeTelefono1())){
             JOptionPane.showMessageDialog(vista.obtenerPanel(), "Rellene el tipo de telefono porfavor", "Alerta", JOptionPane.WARNING_MESSAGE);
             return true;
         }else if("".equals(vista.getComboBoxTipoDePersona())){
             JOptionPane.showMessageDialog(vista.obtenerPanel(), "Rellene el tipo de persona porfavor", "Alerta", JOptionPane.WARNING_MESSAGE);
             return true;
         }
+        
+        if(!"".equals(vista.getCajaDeTextoTelefono2())){
+            if("".equals(vista.getComboBoxTipoDeTelefono2())){
+                JOptionPane.showMessageDialog(vista.obtenerPanel(), "Rellene el tipo de telefono del telefono 2 porfavor", "Alerta", JOptionPane.WARNING_MESSAGE);
+                return true;
+            }
+        }else if(!"".equals(vista.getCajaDeTextoTelefono3())){
+            if("".equals(vista.getComboBoxTipoDeTelefono3())){
+                JOptionPane.showMessageDialog(vista.obtenerPanel(), "Rellene el tipo de telefono del telefono 3 porfavor", "Alerta", JOptionPane.WARNING_MESSAGE);
+                return true;
+            }
+        }
         return false;
     }
     
     private void registrarPorTipoDePersona(String tipoDePersona){
         if("ESTUDIANTE".equals(tipoDePersona)){
-            Estudiante estudiante = new Estudiante(vista.getCajaDeTextoNombre(), vista.getCajaDeTextoId(), vista.getCajaDeTextoFechaDeNacimiento(), vista.getCajaDeTextoDireccion(), vista.getCajaDeTextoTelefono(), vista.getComboBoxTipoDeTelefono());
+            Estudiante estudiante = new Estudiante(vista.getCajaDeTextoNombre(), vista.getCajaDeTextoId(), vista.getCajaDeTextoFechaDeNacimiento(), vista.getCajaDeTextoDireccion(), vista.getCajaDeTextoDireccion2(), vista.getCajaDeTextoTelefono1(), vista.getComboBoxTipoDeTelefono1(), vista.getCajaDeTextoTelefono2(), vista.getComboBoxTipoDeTelefono2(), vista.getCajaDeTextoTelefono3(), vista.getComboBoxTipoDeTelefono3());
             modelo.registrar(estudiante);
             JOptionPane.showMessageDialog(vista.obtenerPanel(), "Se registro correctamente al estudiante", "Todo claro", JOptionPane.INFORMATION_MESSAGE);
         }else if("PROFESOR".equals(tipoDePersona)){
-            Profesor profesor = new Profesor(vista.getCajaDeTextoNombre(), vista.getCajaDeTextoId(), vista.getCajaDeTextoFechaDeNacimiento(), vista.getCajaDeTextoDireccion(), vista.getCajaDeTextoTelefono(), vista.getComboBoxTipoDeTelefono());
+            Profesor profesor = new Profesor(vista.getCajaDeTextoNombre(), vista.getCajaDeTextoId(), vista.getCajaDeTextoFechaDeNacimiento(), vista.getCajaDeTextoDireccion(),vista.getCajaDeTextoDireccion2(), vista.getCajaDeTextoTelefono1(), vista.getComboBoxTipoDeTelefono1(), vista.getCajaDeTextoTelefono2(), vista.getComboBoxTipoDeTelefono2(), vista.getCajaDeTextoTelefono3(), vista.getComboBoxTipoDeTelefono3());
             modelo.registrar(profesor);
             JOptionPane.showMessageDialog(vista.obtenerPanel(), "Se registro correctamente al Profesor", "Todo claro", JOptionPane.INFORMATION_MESSAGE);
         }else if("EMPLEADO".equals(tipoDePersona)){
-            Empleado empleado = new Empleado(vista.getCajaDeTextoNombre(), vista.getCajaDeTextoId(), vista.getCajaDeTextoFechaDeNacimiento(), vista.getCajaDeTextoDireccion(), vista.getCajaDeTextoTelefono(), vista.getComboBoxTipoDeTelefono());
+            Empleado empleado = new Empleado(vista.getCajaDeTextoNombre(), vista.getCajaDeTextoId(), vista.getCajaDeTextoFechaDeNacimiento(), vista.getCajaDeTextoDireccion(),vista.getCajaDeTextoDireccion2(), vista.getCajaDeTextoTelefono1(), vista.getComboBoxTipoDeTelefono1(), vista.getCajaDeTextoTelefono2(), vista.getComboBoxTipoDeTelefono2(), vista.getCajaDeTextoTelefono3(), vista.getComboBoxTipoDeTelefono3());
             modelo.registrar(empleado);
             JOptionPane.showMessageDialog(vista.obtenerPanel(), "Se registro correctamente al Empleado", "Todo claro", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+    
+    class acciones2 extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            vista.mostrarMasTelefonos(true);
+        }
+    }
+    
+    class acciones3 extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            vista.mostrarMasTelefonos(false);
+        }
+    }
+    
+    class acciones4 extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            vista.mostrarMasDirecciones(true);
+        }
+    }
+    
+    class acciones5 extends MouseAdapter {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            vista.mostrarMasDirecciones(false);
         }
     }
 }

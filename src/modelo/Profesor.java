@@ -2,8 +2,8 @@ package modelo;
 
 public class Profesor extends Persona {
     
-    public Profesor(String NombreCompleto, String numId, String fechaDeNacimiento, String direccion, String telefono, String tipoTelefono) {
-        super(NombreCompleto, numId, fechaDeNacimiento, direccion, telefono, tipoTelefono, "Profesor");
+    public Profesor(String NombreCompleto, String numId, String fechaDeNacimiento, String direccion, String direccion2, String telefono, String tipoTelefono, String telefono2, String tipoTelefono2, String telefono3, String tipoTelefono3) {
+        super(NombreCompleto, numId, fechaDeNacimiento, direccion, direccion2, telefono, tipoTelefono, telefono2, tipoTelefono2,telefono3, tipoTelefono3, "Profesor");
     }
     
 }

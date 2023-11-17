@@ -22,5 +22,9 @@ public class PrincipalModel {
     public Persona getPersona(String id){
         return this.personaDao.getPersona(id);
     }
+    
+    public boolean actualizarPersona(Persona persona, String idViejo){
+        return this.personaDao.updatePersona(persona, idViejo);
+    }
 }
 

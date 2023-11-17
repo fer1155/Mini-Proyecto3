@@ -2,7 +2,9 @@ package vista;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -24,11 +26,24 @@ public class RegistrarPersonaView extends JFrame {
     private JTextField cajaTextoId;
     private JTextField cajaTextoFechaDeNacimiento;
     private JTextField cajaTextoDireccion;
-    private JTextField cajaTextoTelefono;
-    private JComboBox<String> comboBoxTipoDeTelefono;
+    private JTextField cajaTextoTelefono1;
+    private JComboBox<String> comboBoxTipoDeTelefono1;
     private JComboBox<String> comboBoxTipoDePersona;
     private JButton botonRegistrar;
     private JButton botonCerrar;
+    private ImageIcon imgMasTelefonos;
+    private JLabel etiquetaMasTelefonos;
+    private JTextField cajaTextoTelefono2;
+    private JComboBox<String> comboBoxTipoDeTelefono2;
+    private JTextField cajaTextoTelefono3;
+    private JComboBox<String> comboBoxTipoDeTelefono3;
+    private ImageIcon imgMenosTelefonos;
+    private JLabel etiquetaMenosTelefonos;
+    private JTextField cajaTextoDireccion2;
+    private ImageIcon imgMasDirecciones;
+    private JLabel etiquetaMasDirecciones;
+    private ImageIcon imgMenosDirecciones;
+    private JLabel etiquetaMenosDirecciones;
     
     //Constructor de la ventana Registrar Personas
     public RegistrarPersonaView(){
@@ -48,8 +63,17 @@ public class RegistrarPersonaView extends JFrame {
         establecerCajaDeTextoId();
         establecerCajaDeTextoFechaDeNacimiento();
         establecerCajaDeTextoDireccion();
-        establecerCajaDeTextoTelefono();
-        establecerComboBoxDeTipoDeTelefono();
+        establecerCajaDeTextoDireccion2();
+        establecerBotonMasDirecciones();
+        establecerBotonMenosDirecciones();
+        establecerCajaDeTextoTelefono1();
+        establecerComboBoxDeTipoDeTelefono1();
+        establecerCajaDeTextoTelefono2();
+        establecerComboBoxDeTipoDeTelefono2();
+        establecerCajaDeTextoTelefono3();
+        establecerComboBoxDeTipoDeTelefono3();
+        establecerBotonMasTelefonos();
+        establecerBotonMenosTelefonos();
         establecerComboBoxDeTipoDePersona();
         establecerBtonRegistrar();
         establecerBtonCerrar();
@@ -140,28 +164,157 @@ public class RegistrarPersonaView extends JFrame {
         return cajaTextoDireccion.getText();
     }
     
-    private void establecerCajaDeTextoTelefono() {
-        cajaTextoTelefono= new JTextField();
-        cajaTextoTelefono.setBounds(100, 310, 140, 30);
-        cajaTextoTelefono.setFont(new Font("Centaur", 1, 15));
+    private void establecerCajaDeTextoDireccion2() {
+        cajaTextoDireccion2 = new JTextField();
+        cajaTextoDireccion2.setBounds(250, 270, 140, 30);
+        cajaTextoDireccion2.setFont(new Font("Centaur", 1, 15));
         Color colorBorde = new Color(94, 94, 94);
-        cajaTextoTelefono.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
-        layeredPane.add(cajaTextoTelefono, JLayeredPane.MODAL_LAYER);
+        cajaTextoDireccion2.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
+        layeredPane.add(cajaTextoDireccion2, JLayeredPane.MODAL_LAYER);
     }
     
-    public String getCajaDeTextoTelefono(){
-        return cajaTextoTelefono.getText();
+    public String getCajaDeTextoDireccion2(){
+        return cajaTextoDireccion2.getText();
     }
     
-    private void establecerComboBoxDeTipoDeTelefono(){
+    private void establecerBotonMasDirecciones() {
+        imgMasDirecciones = new ImageIcon("mas.png");
+        etiquetaMasDirecciones = new JLabel();
+        etiquetaMasDirecciones.setBounds(250, 270, 20, 20);
+        etiquetaMasDirecciones.setIcon(new ImageIcon(imgMasDirecciones.getImage().getScaledInstance(etiquetaMasDirecciones.getWidth(), etiquetaMasDirecciones.getHeight(), Image.SCALE_SMOOTH)));
+        layeredPane.add(etiquetaMasDirecciones, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public void addBtnMasDireccionesListener(MouseListener listenControl){
+        etiquetaMasDirecciones.addMouseListener(listenControl);
+    }
+    
+    private void establecerBotonMenosDirecciones() {
+        imgMenosDirecciones = new ImageIcon("mas.png");
+        etiquetaMenosDirecciones = new JLabel();
+        etiquetaMenosDirecciones.setBounds(400, 270, 20, 20);
+        etiquetaMenosDirecciones.setIcon(new ImageIcon(imgMenosDirecciones.getImage().getScaledInstance(etiquetaMenosDirecciones.getWidth(), etiquetaMenosDirecciones.getHeight(), Image.SCALE_SMOOTH)));
+        layeredPane.add(etiquetaMenosDirecciones, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public void addBtnMenosDireccionesListener(MouseListener listenControl){
+        etiquetaMenosDirecciones.addMouseListener(listenControl);
+    }
+    
+    public void mostrarMasDirecciones(boolean estado){
+        cajaTextoDireccion2.setEnabled(estado);
+        cajaTextoDireccion2.setVisible(estado);
+        etiquetaMenosDirecciones.setEnabled(estado);
+        etiquetaMenosDirecciones.setVisible(estado);
+    }
+    
+    private void establecerCajaDeTextoTelefono1() {
+        cajaTextoTelefono1 = new JTextField();
+        cajaTextoTelefono1.setBounds(100, 310, 140, 30);
+        cajaTextoTelefono1.setFont(new Font("Centaur", 1, 15));
+        Color colorBorde = new Color(94, 94, 94);
+        cajaTextoTelefono1.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
+        layeredPane.add(cajaTextoTelefono1, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getCajaDeTextoTelefono1(){
+        return cajaTextoTelefono1.getText();
+    }
+    
+    private void establecerComboBoxDeTipoDeTelefono1(){
         String[] opciones = {"", "MOVIL", "CASA", "OFICINA"};
-        comboBoxTipoDeTelefono = new JComboBox<>(opciones);
-        comboBoxTipoDeTelefono.setBounds(350, 310, 230, 40);
-        layeredPane.add(comboBoxTipoDeTelefono, JLayeredPane.MODAL_LAYER);
+        comboBoxTipoDeTelefono1 = new JComboBox<>(opciones);
+        comboBoxTipoDeTelefono1.setBounds(100, 360, 230, 40);
+        layeredPane.add(comboBoxTipoDeTelefono1, JLayeredPane.MODAL_LAYER);
     }
     
-    public String getComboBoxTipoDeTelefono(){
-        return (String) comboBoxTipoDeTelefono.getSelectedItem();
+    public String getComboBoxTipoDeTelefono1(){
+        return (String) comboBoxTipoDeTelefono1.getSelectedItem();
+    }
+    
+    private void establecerCajaDeTextoTelefono2() {
+        cajaTextoTelefono2 = new JTextField();
+        cajaTextoTelefono2.setBounds(250, 310, 140, 30);
+        cajaTextoTelefono2.setFont(new Font("Centaur", 1, 15));
+        Color colorBorde = new Color(94, 94, 94);
+        cajaTextoTelefono2.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
+        layeredPane.add(cajaTextoTelefono2, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getCajaDeTextoTelefono2(){
+        return cajaTextoTelefono2.getText();
+    }
+    
+    private void establecerComboBoxDeTipoDeTelefono2(){
+        String[] opciones = {"", "MOVIL", "CASA", "OFICINA"};
+        comboBoxTipoDeTelefono2 = new JComboBox<>(opciones);
+        comboBoxTipoDeTelefono2.setBounds(250, 360, 230, 40);
+        layeredPane.add(comboBoxTipoDeTelefono2, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getComboBoxTipoDeTelefono2(){
+        return (String) comboBoxTipoDeTelefono2.getSelectedItem();
+    }
+    
+    private void establecerCajaDeTextoTelefono3() {
+        cajaTextoTelefono3 = new JTextField();
+        cajaTextoTelefono3.setBounds(400, 310, 140, 30);
+        cajaTextoTelefono3.setFont(new Font("Centaur", 1, 15));
+        Color colorBorde = new Color(94, 94, 94);
+        cajaTextoTelefono3.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
+        layeredPane.add(cajaTextoTelefono3, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getCajaDeTextoTelefono3(){
+        return cajaTextoTelefono3.getText();
+    }
+    
+    private void establecerComboBoxDeTipoDeTelefono3(){
+        String[] opciones = {"", "MOVIL", "CASA", "OFICINA"};
+        comboBoxTipoDeTelefono3 = new JComboBox<>(opciones);
+        comboBoxTipoDeTelefono3.setBounds(400, 360, 230, 40);
+        layeredPane.add(comboBoxTipoDeTelefono3, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public String getComboBoxTipoDeTelefono3(){
+        return (String) comboBoxTipoDeTelefono3.getSelectedItem();
+    }
+    
+    private void establecerBotonMasTelefonos() {
+        imgMasTelefonos = new ImageIcon("mas.png");
+        etiquetaMasTelefonos = new JLabel();
+        etiquetaMasTelefonos.setBounds(250, 310, 20, 20);
+        etiquetaMasTelefonos.setIcon(new ImageIcon(imgMasTelefonos.getImage().getScaledInstance(etiquetaMasTelefonos.getWidth(), etiquetaMasTelefonos.getHeight(), Image.SCALE_SMOOTH)));
+        layeredPane.add(etiquetaMasTelefonos, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public void addBtnMasTelefonosListener(MouseListener listenControl){
+        etiquetaMasTelefonos.addMouseListener(listenControl);
+    }
+    
+    private void establecerBotonMenosTelefonos() {
+        imgMenosTelefonos = new ImageIcon("mas.png");
+        etiquetaMenosTelefonos = new JLabel();
+        etiquetaMenosTelefonos.setBounds(560, 310, 20, 20);
+        etiquetaMenosTelefonos.setIcon(new ImageIcon(imgMenosTelefonos.getImage().getScaledInstance(etiquetaMenosTelefonos.getWidth(), etiquetaMenosTelefonos.getHeight(), Image.SCALE_SMOOTH)));
+        layeredPane.add(etiquetaMenosTelefonos, JLayeredPane.MODAL_LAYER);
+    }
+    
+    public void addBtnMenosTelefonosListener(MouseListener listenControl){
+        etiquetaMenosTelefonos.addMouseListener(listenControl);
+    }
+    
+    public void mostrarMasTelefonos(boolean estado){
+        cajaTextoTelefono2.setEnabled(estado);
+        cajaTextoTelefono2.setVisible(estado);
+        comboBoxTipoDeTelefono2.setEnabled(estado);
+        comboBoxTipoDeTelefono2.setVisible(estado);
+        cajaTextoTelefono3.setEnabled(estado);
+        cajaTextoTelefono3.setVisible(estado);
+        comboBoxTipoDeTelefono3.setEnabled(estado);
+        comboBoxTipoDeTelefono3.setVisible(estado);
+        etiquetaMenosTelefonos.setEnabled(estado);
+        etiquetaMenosTelefonos.setVisible(estado);
     }
     
     private void establecerComboBoxDeTipoDePersona(){
@@ -214,8 +367,13 @@ public class RegistrarPersonaView extends JFrame {
         cajaTextoId.setText("");
         cajaTextoFechaDeNacimiento.setText("");
         cajaTextoDireccion.setText("");
-        cajaTextoTelefono.setText("");
-        comboBoxTipoDeTelefono.setSelectedItem("");
+        cajaTextoDireccion2.setText("");
+        cajaTextoTelefono1.setText("");
+        comboBoxTipoDeTelefono1.setSelectedItem("");
+        cajaTextoTelefono2.setText("");
+        comboBoxTipoDeTelefono2.setSelectedItem("");
+        cajaTextoTelefono3.setText("");
+        comboBoxTipoDeTelefono3.setSelectedItem("");
         comboBoxTipoDePersona.setSelectedItem("");
     }
 }

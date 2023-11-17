@@ -80,8 +80,29 @@ public class IPersonaDaoImplementation implements IPersonaDao {
     }
 
     @Override
-    public boolean updatePersona(Persona persona) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean updatePersona(Persona personaConDatosActualizados, String IdPersonaVieja) {
+        for(int i = 0; i<estudiantes.size(); i++) {
+            if(IdPersonaVieja.equals(estudiantes.get(i).getNumId())){
+                estudiantes.set(i, personaConDatosActualizados);
+                return true;
+            }                            
+        }
+        
+        for(int i = 0; i < profesores.size(); i++) {
+            if(IdPersonaVieja.equals(profesores.get(i).getNumId())){
+                profesores.set(i, personaConDatosActualizados);
+                return true;
+            }                            
+        }
+        
+        for(int i = 0; i < empleados.size(); i++) {
+            if(IdPersonaVieja.equals(empleados.get(i).getNumId())){
+                empleados.set(i, personaConDatosActualizados);
+                return true;
+            }                            
+        }
+        
+        return false;
     }
 
     @Override
