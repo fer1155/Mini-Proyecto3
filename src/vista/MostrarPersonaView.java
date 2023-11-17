@@ -25,13 +25,7 @@ public class MostrarPersonaView extends JFrame{
     private JButton botonMostrarPersona;
     private JButton botonMostrarPersonas;
     private JButton botonCerrar;
-    private JTextField cajaTextoNombre;
     private JTextField cajaTextoId;
-    private JTextField cajaTextoFechaDeNacimiento;
-    private JTextField cajaTextoDireccion;
-    private JTextField cajaTextoTelefono;
-    private JComboBox<String> comboBoxTipoDeTelefono;
-    private JComboBox<String> comboBoxTipoDePersona;
     private JLabel textPrueba;
     private JButton botonBuscar;
     
@@ -49,13 +43,7 @@ public class MostrarPersonaView extends JFrame{
         establecerPanel();
         establecerFondo();
         establecerTitulo();
-        establecerCajaDeTextoNombre();
         establecerCajaDeTextoId();
-        establecerCajaDeTextoFechaDeNacimiento();
-        establecerCajaDeTextoDireccion();
-        establecerCajaDeTextoTelefono();
-        establecerComboBoxDeTipoDeTelefono();
-        establecerComboBoxDeTipoDePersona();
         establecerBtonBuscar();
         establecerBtonMostrarPersonas();
         establecerBtonMostrarPersona();
@@ -96,19 +84,6 @@ public class MostrarPersonaView extends JFrame{
         layeredPane.add(titulo, JLayeredPane.MODAL_LAYER);    
     }
     
-    private void establecerCajaDeTextoNombre() {
-        cajaTextoNombre = new JTextField();
-        cajaTextoNombre.setBounds(100, 150, 140, 30);
-        cajaTextoNombre.setFont(new Font("Centaur", 1, 15));
-        Color colorBorde = new Color(94, 94, 94);
-        cajaTextoNombre.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
-        layeredPane.add(cajaTextoNombre, JLayeredPane.MODAL_LAYER);
-    }
-    
-    public String getCajaDeTextoNombre(){
-        return cajaTextoNombre.getText();
-    }
-    
     private void establecerCajaDeTextoId() {
         cajaTextoId = new JTextField();
         cajaTextoId.setBounds(100, 190, 140, 30);
@@ -120,67 +95,6 @@ public class MostrarPersonaView extends JFrame{
     
     public String getCajaDeTextoId(){
         return cajaTextoId.getText();
-    }
-    
-    private void establecerCajaDeTextoFechaDeNacimiento() {
-        cajaTextoFechaDeNacimiento= new JTextField();
-        cajaTextoFechaDeNacimiento.setBounds(100, 230, 140, 30);
-        cajaTextoFechaDeNacimiento.setFont(new Font("Centaur", 1, 15));
-        Color colorBorde = new Color(94, 94, 94);
-        cajaTextoFechaDeNacimiento.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
-        layeredPane.add(cajaTextoFechaDeNacimiento, JLayeredPane.MODAL_LAYER);
-    }
-    
-    public String getCajaDeTextoFechaDeNacimiento(){
-        return cajaTextoFechaDeNacimiento.getText();
-    }
-    
-    private void establecerCajaDeTextoDireccion() {
-        cajaTextoDireccion= new JTextField();
-        cajaTextoDireccion.setBounds(100, 270, 140, 30);
-        cajaTextoDireccion.setFont(new Font("Centaur", 1, 15));
-        Color colorBorde = new Color(94, 94, 94);
-        cajaTextoDireccion.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
-        layeredPane.add(cajaTextoDireccion, JLayeredPane.MODAL_LAYER);
-    }
-    
-    public String getCajaDeTextoDireccion(){
-        return cajaTextoDireccion.getText();
-    }
-    
-    private void establecerCajaDeTextoTelefono() {
-        cajaTextoTelefono= new JTextField();
-        cajaTextoTelefono.setBounds(100, 310, 140, 30);
-        cajaTextoTelefono.setFont(new Font("Centaur", 1, 15));
-        Color colorBorde = new Color(94, 94, 94);
-        cajaTextoTelefono.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
-        layeredPane.add(cajaTextoTelefono, JLayeredPane.MODAL_LAYER);
-    }
-    
-    public String getCajaDeTextoTelefono(){
-        return cajaTextoTelefono.getText();
-    }
-    
-    private void establecerComboBoxDeTipoDeTelefono(){
-        String[] opciones = {"", "MOVIL", "CASA", "OFICINA"};
-        comboBoxTipoDeTelefono = new JComboBox<>(opciones);
-        comboBoxTipoDeTelefono.setBounds(350, 310, 230, 40);
-        layeredPane.add(comboBoxTipoDeTelefono, JLayeredPane.MODAL_LAYER);
-    }
-    
-    public String getComboBoxTipoDeTelefono(){
-        return (String) comboBoxTipoDeTelefono.getSelectedItem();
-    }
-    
-    private void establecerComboBoxDeTipoDePersona(){
-        String[] opciones = {"","ESTUDIANTE", "PROFESOR", "EMPLEADO"};
-        comboBoxTipoDePersona = new JComboBox<>(opciones);
-        comboBoxTipoDePersona.setBounds(550, 250, 230, 40);
-        layeredPane.add(comboBoxTipoDePersona, JLayeredPane.MODAL_LAYER);
-    }
-    
-    public String getComboBoxTipoDePersona(){
-        return (String) comboBoxTipoDePersona.getSelectedItem();
     }
     
     private void establecerBtonBuscar() {
@@ -262,22 +176,14 @@ public class MostrarPersonaView extends JFrame{
     }
     
     public void mostrarCampos(boolean estado){
-        cajaTextoNombre.setEnabled(estado);
-        cajaTextoNombre.setVisible(estado);
         cajaTextoId.setEnabled(estado);
         cajaTextoId.setVisible(estado);
-        cajaTextoFechaDeNacimiento.setEnabled(estado);
-        cajaTextoFechaDeNacimiento.setVisible(estado);
-        cajaTextoDireccion.setEnabled(estado);
-        cajaTextoDireccion.setVisible(estado);
-        cajaTextoTelefono.setEnabled(estado);
-        cajaTextoTelefono.setVisible(estado);
-        comboBoxTipoDeTelefono.setEnabled(estado);
-        comboBoxTipoDeTelefono.setVisible(estado);
-        comboBoxTipoDePersona.setEnabled(estado);
-        comboBoxTipoDePersona.setVisible(estado);
         botonBuscar.setEnabled(estado);
         botonBuscar.setVisible(estado);
+    }
+    
+    public void limpiarCampos(){
+        cajaTextoId.setText("");
     }
     
     private void establecerTextoPrueba() {

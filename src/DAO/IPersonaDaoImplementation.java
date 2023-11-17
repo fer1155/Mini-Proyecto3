@@ -22,19 +22,19 @@ public class IPersonaDaoImplementation implements IPersonaDao {
     @Override
     public boolean addPersona(Persona persona) {
         if("Estudiante".equals(persona.getTipo())){
-            estudiantes.add((Estudiante) persona);
+            estudiantes.add(persona);
             for(Persona elemento:estudiantes){
                 System.out.println(elemento);
             }
             return true;
         }else if("Profesor".equals(persona.getTipo())){
-            profesores.add((Profesor) persona);
+            profesores.add(persona);
             for(Persona elemento:profesores){
                 System.out.println(elemento);
             }
             return true;
         }else if("Empleado".equals(persona.getTipo())){
-            empleados.add((Empleado) persona);
+            empleados.add(persona);
             for(Persona elemento:empleados){
                 System.out.println(elemento);
             }
@@ -56,18 +56,97 @@ public class IPersonaDaoImplementation implements IPersonaDao {
     }
 
     @Override
-    public Estudiante getPersona(int personaId) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Persona getPersona(String personaId) {
+        
+        for(Persona estudiante : estudiantes) {
+            if(personaId.equals(estudiante.getNumId())){
+                return estudiante;
+            }                            
+        }
+        
+        for(Persona profesor : profesores) {
+            if(personaId.equals(profesor.getNumId())){
+                return profesor;
+            }
+        }
+        
+        for(Persona empleado : empleados) {
+            if(personaId.equals(empleado.getNumId())){
+                return empleado;
+            }
+        }
+        
+        return null;
     }
 
     @Override
-    public boolean updatePersona(Persona persona) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean updatePersona(Persona personaConDatosActualizados, String tipoViejo, String IdPersonaVieja) {
+        for(int i = 0; i < estudiantes.size(); i++) {
+            if(IdPersonaVieja.equals(estudiantes.get(i).getNumId())){
+                if(estudiantes.get(i).getTipo().equals(tipoViejo)){
+                    estudiantes.set(i, personaConDatosActualizados);
+                    return true;
+                }else{
+                    estudiantes.remove(estudiantes.get(i));
+                    addPersona(personaConDatosActualizados);
+                    return true;
+                }
+            }                            
+        }
+        
+        for(int i = 0; i < profesores.size(); i++) {
+            if(IdPersonaVieja.equals(profesores.get(i).getNumId())){
+                if(profesores.get(i).getTipo().equals(tipoViejo)){
+                    profesores.set(i, personaConDatosActualizados);
+                    return true;
+                }else{
+                    profesores.remove(profesores.get(i));
+                    addPersona(personaConDatosActualizados);
+                    return true;
+                }
+            }                            
+        }
+        
+        for(int i = 0; i < empleados.size(); i++) {
+            if(IdPersonaVieja.equals(empleados.get(i).getNumId())){
+                if(empleados.get(i).getTipo().equals(tipoViejo)){
+                    empleados.set(i, personaConDatosActualizados);
+                    return true;
+                }else{
+                    empleados.remove(empleados.get(i));
+                    addPersona(personaConDatosActualizados);
+                    return true;
+                }
+            }                            
+        }
+        
+        return false;
     }
 
     @Override
-    public boolean deletePersona(Persona persona) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
+    public boolean deletePersona(String idPersonaAEliminar) {
+        
+        for(Persona estudiante : estudiantes) {
+            if(idPersonaAEliminar.equals(estudiante.getNumId())){
+                estudiantes.remove(estudiante);
+                return true;
+            }                            
+        }
+        
+        for(Persona profesor : profesores) {
+            if(idPersonaAEliminar.equals(profesor.getNumId())){
+                profesores.remove(profesor);
+                return true;
+            }                            
+        }
+        
+        for(Persona empleado : empleados) {
+            if(idPersonaAEliminar.equals(empleado.getNumId())){
+                empleados.remove(empleado);
+                return true;
+            }                            
+        }
+        
+        return false;
+    }   
 }

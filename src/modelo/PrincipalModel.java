@@ -3,7 +3,6 @@ package modelo;
 import DAO.IPersonaDaoImplementation;
 import DAO.IPersonaDao;
 import java.util.ArrayList;
-import java.util.List;
 
 public class PrincipalModel {
     private IPersonaDao personaDao;
@@ -18,6 +17,18 @@ public class PrincipalModel {
     
     public ArrayList<Persona> getListadoPersonas(String tipo){
         return this.personaDao.getPersonasPorTipo(tipo);
+    }
+    
+    public Persona getPersona(String id){
+        return this.personaDao.getPersona(id);
+    }
+    
+    public boolean actualizarPersona(Persona persona, String tipoViejo, String IdPersonaVieja){
+        return this.personaDao.updatePersona(persona, tipoViejo, IdPersonaVieja);
+    }
+    
+    public boolean deletePersona(String id){
+        return this.personaDao.deletePersona(id);
     }
 }
 

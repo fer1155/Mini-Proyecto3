@@ -8,6 +8,10 @@ public class RegistrarPersonaModel {
         this.modeloGeneral = modelo;
     }
 
+    public Persona getPersona(String id){
+        return modeloGeneral.getPersona(id);
+    }
+    
     public void registrar(Persona personaARegistrar){
         modeloGeneral.agregarPersona(personaARegistrar);
     }
