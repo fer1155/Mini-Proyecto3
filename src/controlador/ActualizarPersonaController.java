@@ -58,15 +58,20 @@ public class ActualizarPersonaController {
                 if(verificarCamposVacios()){
                     JOptionPane.showMessageDialog(vista.obtenerPanel(), "No ha llenado algun campo aun", "Alerta", JOptionPane.ERROR_MESSAGE);
                 }else{
-                    int opcion = JOptionPane.showConfirmDialog(vista.obtenerPanel(), "¿Esta seguro de los datos?", "Pregunta", JOptionPane.YES_NO_OPTION);
+                    if(verificarIdRepetido(vista.getCajaDeTextoIdV2()) == true){
+                        JOptionPane.showMessageDialog(vista.obtenerPanel(), "El id esta repetido, ingrese otro", "Alerta", JOptionPane.ERROR_MESSAGE);
+                        vista.limpiarComponentes();
+                    }else{
+                        int opcion = JOptionPane.showConfirmDialog(vista.obtenerPanel(), "¿Esta seguro de los datos?", "Pregunta", JOptionPane.YES_NO_OPTION);
 
-                    if (opcion == JOptionPane.YES_OPTION) {
-                        String tipo = personaBuscada.getTipo();
-                        if(modelo.actualizarPersona(cambiarDatos(), tipo, personaBuscada.getNumId())){
-                            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Actualizacion exitosa", "Alerta", JOptionPane.INFORMATION_MESSAGE);
-                            vista.limpiarComponentes();
-                            vista.mostrarComponentesV1(true);
-                            vista.mostrarComponentesV2(false);
+                        if (opcion == JOptionPane.YES_OPTION) {
+                            String tipo = personaBuscada.getTipo();
+                            if(modelo.actualizarPersona(cambiarDatos(), tipo, personaBuscada.getNumId())){
+                                JOptionPane.showMessageDialog(vista.obtenerPanel(), "Actualizacion exitosa", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                                vista.limpiarComponentes();
+                                vista.mostrarComponentesV1(true);
+                                vista.mostrarComponentesV2(false);
+                            }
                         }
                     }
                 }
@@ -138,5 +143,16 @@ public class ActualizarPersonaController {
         }
         
         return true;
+    }
+    
+    public boolean verificarIdRepetido(String id){
+        
+        Persona personaEncontrada = modelo.getPersona(id);
+        
+        if(personaEncontrada == null){
+            return false;
+        }else{
+            return true;
+        }    
     }
 }
