@@ -37,6 +37,7 @@ public class ActualizarPersonaController {
                     JOptionPane.showMessageDialog(vista.obtenerPanel(), "Se encontro la persona con id " + vista.getCajaDeTextoIdV1(), "Info", JOptionPane.INFORMATION_MESSAGE);
                     vista.limpiarComponentes();
                     vista.mostrarComponentesV1(false);
+                    vista.establecerDatosDeLaPersona(personaBuscada.getNombreCompleto(), personaBuscada.getNumId(), personaBuscada.getFechaDeNacimiento(), personaBuscada.getDireccion(), personaBuscada.getDireccion2(), personaBuscada.getTelefono(), personaBuscada.getTipoTelefono(), personaBuscada.getTipo(), personaBuscada.getTelefono2(), personaBuscada.getTipoTelefono2(), personaBuscada.getTelefono3(), personaBuscada.getTipoTelefono3());
                     vista.mostrarComponentesV2(true);
                 
                 }else{
@@ -54,6 +55,7 @@ public class ActualizarPersonaController {
                 }
             }
             
+            /*
             if(e.getActionCommand().equalsIgnoreCase("Actualizar")){
                 if(verificarCamposVacios()){
                     JOptionPane.showMessageDialog(vista.obtenerPanel(), "No ha llenado algun campo aun", "Alerta", JOptionPane.ERROR_MESSAGE);
@@ -72,6 +74,24 @@ public class ActualizarPersonaController {
                                 vista.mostrarComponentesV1(true);
                                 vista.mostrarComponentesV2(false);
                             }
+                        }
+                    }
+                }
+            }*/
+            
+            if(e.getActionCommand().equalsIgnoreCase("Actualizar")){
+                if(verificarIdRepetido(vista.getCajaDeTextoIdV2()) == true){
+                    JOptionPane.showMessageDialog(vista.obtenerPanel(), "El id esta repetido, ingrese otro", "Alerta", JOptionPane.ERROR_MESSAGE);
+                }else{
+                    int opcion = JOptionPane.showConfirmDialog(vista.obtenerPanel(), "¿Esta seguro de los datos?", "Pregunta", JOptionPane.YES_NO_OPTION);
+
+                    if (opcion == JOptionPane.YES_OPTION) {
+                        String tipo = personaBuscada.getTipo();
+                        if(modelo.actualizarPersona(cambiarDatos(), tipo, personaBuscada.getNumId())){
+                            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Actualizacion exitosa", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                            vista.limpiarComponentes();
+                            vista.mostrarComponentesV1(true);
+                            vista.mostrarComponentesV2(false);
                         }
                     }
                 }
@@ -149,7 +169,7 @@ public class ActualizarPersonaController {
         
         Persona personaEncontrada = modelo.getPersona(id);
         
-        if(personaEncontrada == null){
+        if(personaEncontrada == null || personaEncontrada.getNumId().equals(personaBuscada.getNumId())){
             return false;
         }else{
             return true;

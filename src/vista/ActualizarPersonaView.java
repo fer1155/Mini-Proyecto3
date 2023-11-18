@@ -402,4 +402,33 @@ public class ActualizarPersonaView extends JFrame{
         cajaTextoTelefono3V2.setText("");
         comboBoxTipoDeTelefono3V2.setSelectedItem("");
     }
+    
+    public void establecerDatosDeLaPersona(String nombre, String id, String fechaDeNacimiento, String direccion1, String direccion2, String telefono1, String tipoTelefono1, String tipoDePersona, String telefono2, String tipoTelefono2, String telefono3, String tipoTelefono3){
+        cajaTextoIdV2.setText(id);
+        cajaTextoNombreV2.setText(nombre);
+        cajaTextoFechaDeNacimientoV2.setText(fechaDeNacimiento);
+        cajaTextoDireccionV2.setText(direccion1);
+        cajaTextoTelefonoV2.setText(telefono1);
+        comboBoxTipoDeTelefonoV2.setSelectedItem(tipoTelefono1);
+        cajaTextoDireccion2V2.setText(direccion2);
+        comboBoxTipoDeTelefono2V2.setSelectedItem(tipoTelefono2);
+        cajaTextoTelefono2V2.setText(telefono2);
+        cajaTextoTelefono3V2.setText(telefono3);
+        comboBoxTipoDeTelefono3V2.setSelectedItem(tipoTelefono3);
+        
+        
+        if(null != tipoDePersona)switch (tipoDePersona) {
+            case "Estudiante":
+                comboBoxTipoDePersonaV2.setSelectedItem("ESTUDIANTE");
+                break;
+            case "Profesor":
+                comboBoxTipoDePersonaV2.setSelectedItem("PROFESOR");
+                break;
+            case "Empleado":
+                comboBoxTipoDePersonaV2.setSelectedItem("EMPLEADO");
+                break;
+            default:
+                break;
+        }
+    }
 }
