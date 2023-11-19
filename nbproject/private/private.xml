@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Fernando/Documents/NetBeansProjects/Miniproyecto%20No.3/src/DAO/IPersonaDaoImplementation.java</file>
-            <file>file:/C:/Users/Fernando/Documents/NetBeansProjects/Miniproyecto%20No.3/src/miniproyecto3pkg/Main.java</file>
-            <file>file:/C:/Users/Fernando/Documents/NetBeansProjects/Miniproyecto%20No.3/src/DAO/IPersonaDao.java</file>
+            <file>file:/C:/Users/DELL/Documents/Proyectos%20JAVA/Mini-Proyecto3/src/vista/MostrarPersonaView.java</file>
+            <file>file:/C:/Users/DELL/Documents/Proyectos%20JAVA/Mini-Proyecto3/src/vista/RegistrarPersonaView.java</file>
+            <file>file:/C:/Users/DELL/Documents/Proyectos%20JAVA/Mini-Proyecto3/src/miniproyecto3pkg/Main.java</file>
+            <file>file:/C:/Users/DELL/Documents/Proyectos%20JAVA/Mini-Proyecto3/src/modelo/Persona.java</file>
+            <file>file:/C:/Users/DELL/Documents/Proyectos%20JAVA/Mini-Proyecto3/src/vista/ActualizarPersonaView.java</file>
         </group>
     </open-files>
 </project-private>

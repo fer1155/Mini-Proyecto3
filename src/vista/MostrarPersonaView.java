@@ -77,7 +77,7 @@ public class MostrarPersonaView extends JFrame{
         
     private void establecerTitulo() {
         titulo = new JLabel("Directorio");
-        titulo.setBounds(265, 20, 530, 120);
+        titulo.setBounds(265, 20, 530, 80);
         Color colorLetra = new Color(78, 39, 0);
         titulo.setForeground(colorLetra);
         titulo.setFont(new Font("Bernard MT Condensed", 1, 85));
@@ -86,7 +86,7 @@ public class MostrarPersonaView extends JFrame{
     
     private void establecerCajaDeTextoId() {
         cajaTextoId = new JTextField();
-        cajaTextoId.setBounds(100, 190, 140, 30);
+        cajaTextoId.setBounds(300, 190, 300, 45);
         cajaTextoId.setFont(new Font("Centaur", 1, 15));
         Color colorBorde = new Color(94, 94, 94);
         cajaTextoId.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
@@ -100,7 +100,7 @@ public class MostrarPersonaView extends JFrame{
     private void establecerBtonBuscar() {
         botonBuscar = new JButton("Buscar");
         botonBuscar.setFocusPainted(false);
-        botonBuscar.setBounds(550, 150, 230, 60);  
+        botonBuscar.setBounds(350, 260, 200, 60);  
         botonBuscar.setForeground(Color.WHITE);
         botonBuscar.setFont(new Font("Bernard MT Condensed", 0, 28));
         Color colorFondoBtn = new Color(78, 39, 0);
@@ -117,7 +117,7 @@ public class MostrarPersonaView extends JFrame{
     private void establecerBtonMostrarPersonas() {
         botonMostrarPersonas = new JButton("Mostrar todas las persona");
         botonMostrarPersonas.setFocusPainted(false);
-        botonMostrarPersonas.setBounds(500, 450, 230, 60);  
+        botonMostrarPersonas.setBounds(500, 360, 300, 60);  
         botonMostrarPersonas.setForeground(Color.WHITE);
         botonMostrarPersonas.setFont(new Font("Bernard MT Condensed", 0, 28));
         Color colorFondoBtn = new Color(78, 39, 0);
@@ -134,7 +134,7 @@ public class MostrarPersonaView extends JFrame{
     private void establecerBtonMostrarPersona() {
         botonMostrarPersona = new JButton("Buscar persona individualmente");
         botonMostrarPersona.setFocusPainted(false);
-        botonMostrarPersona.setBounds(500, 380, 230, 60);  
+        botonMostrarPersona.setBounds(100, 360, 300, 60);  
         botonMostrarPersona.setForeground(Color.WHITE);
         botonMostrarPersona.setFont(new Font("Bernard MT Condensed", 0, 28));
         Color colorFondoBtn = new Color(78, 39, 0);
@@ -151,7 +151,7 @@ public class MostrarPersonaView extends JFrame{
     private void establecerBtonCerrar() {
         botonCerrar = new JButton("Cerrar");
         botonCerrar.setFocusPainted(false);
-        botonCerrar.setBounds(200, 450, 230, 60);  
+        botonCerrar.setBounds(350, 450, 200, 60);  
         botonCerrar.setForeground(Color.WHITE);
         botonCerrar.setFont(new Font("Bernard MT Condensed", 0, 28));
         Color colorFondoBtn = new Color(78, 39, 0);
