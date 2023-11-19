@@ -2,6 +2,7 @@ package vista;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -68,10 +69,10 @@ public class MostrarPersonaView extends JFrame{
     }
 
     private void establecerFondo() {
-        imagenFondo = new ImageIcon("");
+        imagenFondo = new ImageIcon("FondoEliminar.png");
         JLabel etiquetaFondo = new JLabel();
         etiquetaFondo.setBounds(0, 0, this.getWidth(), this.getHeight());
-        //etiquetaFondo.setIcon(new ImageIcon(imagenFondo.getImage().getScaledInstance(etiquetaFondo.getWidth(), etiquetaFondo.getHeight(), Image.SCALE_SMOOTH)));
+        etiquetaFondo.setIcon(new ImageIcon(imagenFondo.getImage().getScaledInstance(etiquetaFondo.getWidth(), etiquetaFondo.getHeight(), Image.SCALE_SMOOTH)));
         layeredPane.add(etiquetaFondo, JLayeredPane.PALETTE_LAYER);
     }
         
@@ -183,7 +184,7 @@ public class MostrarPersonaView extends JFrame{
     }
     
     public void limpiarCampos(){
-        cajaTextoId.setText("");
+        cajaTextoId.setText(" ");
     }
     
     private void establecerTextoPrueba() {
