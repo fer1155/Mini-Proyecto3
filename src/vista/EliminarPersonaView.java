@@ -32,7 +32,7 @@ public class EliminarPersonaView extends JFrame{
     
     //Constructor de la ventana Eliminar Persona
     public EliminarPersonaView(){
-        this.setTitle("Directorio");
+        this.setTitle("Eliminar Usuario");
         this.setBounds(200, 50, 900, 450);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
@@ -88,7 +88,7 @@ public class EliminarPersonaView extends JFrame{
     
     private void establecerTexto2() {
         texto2 = new JLabel("Número ID: ");
-        texto2.setBounds(180, 190, 180, 50);
+        texto2.setBounds(260, 190, 180, 50);
         Color colorLetra = new Color(255, 255, 255);
         texto2.setForeground(colorLetra);
         texto2.setFont(new Font("Arial", 0, 25));
@@ -97,7 +97,7 @@ public class EliminarPersonaView extends JFrame{
     
     private void establecerCajaDeTextoId() {
         cajaTextoId = new JTextField();
-        cajaTextoId.setBounds(350, 190, 200, 50);
+        cajaTextoId.setBounds(430, 190, 200, 50);
         cajaTextoId.setFont(new Font("Centaur", 1, 15));
         Color colorBorde = new Color(255, 255, 255);
         cajaTextoId.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
