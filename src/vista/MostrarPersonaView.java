@@ -35,7 +35,7 @@ public class MostrarPersonaView extends JFrame{
         setResizable(false);
         iniciarComponentes();
     }
-
+    
     private void iniciarComponentes() {
         establecerLayeredPanel();
         establecerPanel();
@@ -184,4 +184,5 @@ public class MostrarPersonaView extends JFrame{
     public void limpiarCampos(){
         cajaTextoId.setText("");
     }
+    
 }

@@ -22,6 +22,12 @@ public class RegistrarPersonaView extends JFrame {
     private JPanel panel;
     private ImageIcon imagenFondo;
     private JLabel titulo;
+    private JLabel fechaNacimiento;
+    private JLabel nombre;
+    private JLabel tipoPersona;
+    private JLabel numeroID;
+    private JLabel direccion;
+    private JLabel telefono;
     private JTextField cajaTextoNombre;
     private JTextField cajaTextoId;
     private JTextField cajaTextoFechaDeNacimiento;
@@ -53,12 +59,18 @@ public class RegistrarPersonaView extends JFrame {
         setResizable(false);
         iniciarComponentes();
     }
-
+    
     private void iniciarComponentes() {
         establecerLayeredPanel();
         establecerPanel();
         establecerFondo();
         establecerTitulo();
+        establecerTextoTipoDePersona();
+        establecerTextoFechaDeNacimiento();
+        establecerTextoNumeroID();
+        establecerTextoNombre();
+        establecerTextoDireccion();
+        establecerTextoNumero();
         establecerCajaDeTextoNombre();
         establecerCajaDeTextoId();
         establecerCajaDeTextoFechaDeNacimiento();
@@ -96,25 +108,79 @@ public class RegistrarPersonaView extends JFrame {
     }
 
     private void establecerFondo() {
-        imagenFondo = new ImageIcon("");
+        imagenFondo = new ImageIcon("FondoRegistrar.png");
         JLabel etiquetaFondo = new JLabel();
         etiquetaFondo.setBounds(0, 0, this.getWidth(), this.getHeight());
-        //etiquetaFondo.setIcon(new ImageIcon(imagenFondo.getImage().getScaledInstance(etiquetaFondo.getWidth(), etiquetaFondo.getHeight(), Image.SCALE_SMOOTH)));
+        etiquetaFondo.setIcon(new ImageIcon(imagenFondo.getImage().getScaledInstance(etiquetaFondo.getWidth(), etiquetaFondo.getHeight(), Image.SCALE_SMOOTH)));
         layeredPane.add(etiquetaFondo, JLayeredPane.PALETTE_LAYER);
     }
         
     private void establecerTitulo() {
-        titulo = new JLabel("Directorio");
-        titulo.setBounds(265, 20, 530, 120);
-        Color colorLetra = new Color(78, 39, 0);
+        titulo = new JLabel("Agregue los datos de la persona a registrar");
+        titulo.setBounds(175, 10, 530, 120);
+        Color colorLetra = new Color(255, 255, 255);
         titulo.setForeground(colorLetra);
-        titulo.setFont(new Font("Bernard MT Condensed", 1, 85));
+        titulo.setFont(new Font("Bernard MT Condensed", 1, 30));
         layeredPane.add(titulo, JLayeredPane.MODAL_LAYER);    
+    }
+    
+    private void establecerTextoTipoDePersona() {
+        tipoPersona = new JLabel("Tipo de persona:");
+        tipoPersona.setBounds(150, 80, 530, 120);
+        Color colorLetra = new Color(255, 255, 255);
+        tipoPersona.setForeground(colorLetra);
+        tipoPersona.setFont(new Font("Bookman Old Style", 1, 18));
+        layeredPane.add(tipoPersona, JLayeredPane.MODAL_LAYER);    
+    }
+    
+    private void establecerTextoFechaDeNacimiento() {
+        fechaNacimiento = new JLabel("Fecha de nacimiento:");
+        fechaNacimiento.setBounds(150, 135, 530, 120);
+        Color colorLetra = new Color(255, 255, 255);
+        fechaNacimiento.setForeground(colorLetra);
+        fechaNacimiento.setFont(new Font("Bookman Old Style", 1, 18));
+        layeredPane.add(fechaNacimiento, JLayeredPane.MODAL_LAYER);    
+    }
+    
+    private void establecerTextoNumeroID() {
+        numeroID = new JLabel("Número de ID:");
+        numeroID.setBounds(150, 185, 530, 120);
+        Color colorLetra = new Color(255, 255, 255);
+        numeroID.setForeground(colorLetra);
+        numeroID.setFont(new Font("Bookman Old Style", 1, 18));
+        layeredPane.add(numeroID, JLayeredPane.MODAL_LAYER);    
+    }
+    
+     private void establecerTextoNombre() {
+        nombre = new JLabel("Nombre completo:");
+        nombre.setBounds(150, 235, 530, 120);
+        Color colorLetra = new Color(255, 255, 255);
+        nombre.setForeground(colorLetra);
+        nombre.setFont(new Font("Bookman Old Style", 1, 18));
+        layeredPane.add(nombre, JLayeredPane.MODAL_LAYER);    
+    }
+     
+     private void establecerTextoDireccion() {
+        direccion = new JLabel("Dirección(es):");
+        direccion.setBounds(150, 285, 530, 120);
+        Color colorLetra = new Color(255, 255, 255);
+        direccion.setForeground(colorLetra);
+        direccion.setFont(new Font("Bookman Old Style", 1, 18));
+        layeredPane.add(direccion, JLayeredPane.MODAL_LAYER);    
+    }
+     
+     private void establecerTextoNumero() {
+        telefono = new JLabel("Número de teléfono(s):");
+        telefono.setBounds(150, 335, 530, 120);
+        Color colorLetra = new Color(255, 255, 255);
+        telefono.setForeground(colorLetra);
+        telefono.setFont(new Font("Bookman Old Style", 1, 18));
+        layeredPane.add(telefono, JLayeredPane.MODAL_LAYER);    
     }
     
     private void establecerCajaDeTextoNombre() {
         cajaTextoNombre = new JTextField();
-        cajaTextoNombre.setBounds(100, 150, 140, 30);
+        cajaTextoNombre.setBounds(370, 280, 140, 30);
         cajaTextoNombre.setFont(new Font("Centaur", 1, 15));
         Color colorBorde = new Color(94, 94, 94);
         cajaTextoNombre.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
@@ -127,7 +193,7 @@ public class RegistrarPersonaView extends JFrame {
     
     private void establecerCajaDeTextoId() {
         cajaTextoId = new JTextField();
-        cajaTextoId.setBounds(100, 190, 140, 30);
+        cajaTextoId.setBounds(370, 230, 140, 30);
         cajaTextoId.setFont(new Font("Centaur", 1, 15));
         Color colorBorde = new Color(94, 94, 94);
         cajaTextoId.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
@@ -140,7 +206,7 @@ public class RegistrarPersonaView extends JFrame {
     
     private void establecerCajaDeTextoFechaDeNacimiento() {
         cajaTextoFechaDeNacimiento= new JTextField();
-        cajaTextoFechaDeNacimiento.setBounds(100, 230, 140, 30);
+        cajaTextoFechaDeNacimiento.setBounds(370, 180, 140, 30);
         cajaTextoFechaDeNacimiento.setFont(new Font("Centaur", 1, 15));
         Color colorBorde = new Color(94, 94, 94);
         cajaTextoFechaDeNacimiento.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
@@ -153,7 +219,7 @@ public class RegistrarPersonaView extends JFrame {
     
     private void establecerCajaDeTextoDireccion() {
         cajaTextoDireccion= new JTextField();
-        cajaTextoDireccion.setBounds(100, 270, 140, 30);
+        cajaTextoDireccion.setBounds(370, 330, 140, 30);
         cajaTextoDireccion.setFont(new Font("Centaur", 1, 15));
         Color colorBorde = new Color(94, 94, 94);
         cajaTextoDireccion.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
@@ -166,7 +232,7 @@ public class RegistrarPersonaView extends JFrame {
     
     private void establecerCajaDeTextoDireccion2() {
         cajaTextoDireccion2 = new JTextField();
-        cajaTextoDireccion2.setBounds(250, 270, 140, 30);
+        cajaTextoDireccion2.setBounds(540, 330, 140, 30);
         cajaTextoDireccion2.setFont(new Font("Centaur", 1, 15));
         Color colorBorde = new Color(94, 94, 94);
         cajaTextoDireccion2.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
@@ -180,7 +246,7 @@ public class RegistrarPersonaView extends JFrame {
     private void establecerBotonMasDirecciones() {
         imgMasDirecciones = new ImageIcon("mas.png");
         etiquetaMasDirecciones = new JLabel();
-        etiquetaMasDirecciones.setBounds(250, 270, 20, 20);
+        etiquetaMasDirecciones.setBounds(513, 332, 20, 20);
         etiquetaMasDirecciones.setIcon(new ImageIcon(imgMasDirecciones.getImage().getScaledInstance(etiquetaMasDirecciones.getWidth(), etiquetaMasDirecciones.getHeight(), Image.SCALE_SMOOTH)));
         layeredPane.add(etiquetaMasDirecciones, JLayeredPane.MODAL_LAYER);
     }
@@ -190,9 +256,9 @@ public class RegistrarPersonaView extends JFrame {
     }
     
     private void establecerBotonMenosDirecciones() {
-        imgMenosDirecciones = new ImageIcon("mas.png");
+        imgMenosDirecciones = new ImageIcon("menoss.png");
         etiquetaMenosDirecciones = new JLabel();
-        etiquetaMenosDirecciones.setBounds(400, 270, 20, 20);
+        etiquetaMenosDirecciones.setBounds(688, 335, 20, 20);
         etiquetaMenosDirecciones.setIcon(new ImageIcon(imgMenosDirecciones.getImage().getScaledInstance(etiquetaMenosDirecciones.getWidth(), etiquetaMenosDirecciones.getHeight(), Image.SCALE_SMOOTH)));
         layeredPane.add(etiquetaMenosDirecciones, JLayeredPane.MODAL_LAYER);
     }
@@ -208,9 +274,26 @@ public class RegistrarPersonaView extends JFrame {
         etiquetaMenosDirecciones.setVisible(estado);
     }
     
+    public void bntEtiquetaMasDirecciones(){
+        etiquetaMasDirecciones.setEnabled(false);
+        etiquetaMasDirecciones.setVisible(false);
+    }
+    
+    public void mostrarMenosDirecciones(boolean estado){
+        cajaTextoDireccion2.setEnabled(estado);
+        cajaTextoDireccion2.setVisible(estado);
+        etiquetaMenosDirecciones.setEnabled(estado);
+        etiquetaMenosDirecciones.setVisible(estado);
+    }
+    
+    public void bntEtiquetaMenosDirecciones(){
+        etiquetaMasDirecciones.setEnabled(true);
+        etiquetaMasDirecciones.setVisible(true);
+    }
+    
     private void establecerCajaDeTextoTelefono1() {
         cajaTextoTelefono1 = new JTextField();
-        cajaTextoTelefono1.setBounds(100, 310, 140, 30);
+        cajaTextoTelefono1.setBounds(370, 380, 120, 30);
         cajaTextoTelefono1.setFont(new Font("Centaur", 1, 15));
         Color colorBorde = new Color(94, 94, 94);
         cajaTextoTelefono1.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
@@ -224,7 +307,7 @@ public class RegistrarPersonaView extends JFrame {
     private void establecerComboBoxDeTipoDeTelefono1(){
         String[] opciones = {"", "MOVIL", "CASA", "OFICINA"};
         comboBoxTipoDeTelefono1 = new JComboBox<>(opciones);
-        comboBoxTipoDeTelefono1.setBounds(100, 360, 230, 40);
+        comboBoxTipoDeTelefono1.setBounds(370, 420, 120, 30);
         layeredPane.add(comboBoxTipoDeTelefono1, JLayeredPane.MODAL_LAYER);
     }
     
@@ -234,7 +317,7 @@ public class RegistrarPersonaView extends JFrame {
     
     private void establecerCajaDeTextoTelefono2() {
         cajaTextoTelefono2 = new JTextField();
-        cajaTextoTelefono2.setBounds(250, 310, 140, 30);
+        cajaTextoTelefono2.setBounds(520, 380, 120, 30);
         cajaTextoTelefono2.setFont(new Font("Centaur", 1, 15));
         Color colorBorde = new Color(94, 94, 94);
         cajaTextoTelefono2.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
@@ -248,7 +331,7 @@ public class RegistrarPersonaView extends JFrame {
     private void establecerComboBoxDeTipoDeTelefono2(){
         String[] opciones = {"", "MOVIL", "CASA", "OFICINA"};
         comboBoxTipoDeTelefono2 = new JComboBox<>(opciones);
-        comboBoxTipoDeTelefono2.setBounds(250, 360, 230, 40);
+        comboBoxTipoDeTelefono2.setBounds(520, 420, 120, 30);
         layeredPane.add(comboBoxTipoDeTelefono2, JLayeredPane.MODAL_LAYER);
     }
     
@@ -258,7 +341,7 @@ public class RegistrarPersonaView extends JFrame {
     
     private void establecerCajaDeTextoTelefono3() {
         cajaTextoTelefono3 = new JTextField();
-        cajaTextoTelefono3.setBounds(400, 310, 140, 30);
+        cajaTextoTelefono3.setBounds(650, 380, 120, 30);
         cajaTextoTelefono3.setFont(new Font("Centaur", 1, 15));
         Color colorBorde = new Color(94, 94, 94);
         cajaTextoTelefono3.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
@@ -272,7 +355,7 @@ public class RegistrarPersonaView extends JFrame {
     private void establecerComboBoxDeTipoDeTelefono3(){
         String[] opciones = {"", "MOVIL", "CASA", "OFICINA"};
         comboBoxTipoDeTelefono3 = new JComboBox<>(opciones);
-        comboBoxTipoDeTelefono3.setBounds(400, 360, 230, 40);
+        comboBoxTipoDeTelefono3.setBounds(650, 420, 120, 30);
         layeredPane.add(comboBoxTipoDeTelefono3, JLayeredPane.MODAL_LAYER);
     }
     
@@ -283,7 +366,7 @@ public class RegistrarPersonaView extends JFrame {
     private void establecerBotonMasTelefonos() {
         imgMasTelefonos = new ImageIcon("mas.png");
         etiquetaMasTelefonos = new JLabel();
-        etiquetaMasTelefonos.setBounds(250, 310, 20, 20);
+        etiquetaMasTelefonos.setBounds(495, 385, 20, 20);
         etiquetaMasTelefonos.setIcon(new ImageIcon(imgMasTelefonos.getImage().getScaledInstance(etiquetaMasTelefonos.getWidth(), etiquetaMasTelefonos.getHeight(), Image.SCALE_SMOOTH)));
         layeredPane.add(etiquetaMasTelefonos, JLayeredPane.MODAL_LAYER);
     }
@@ -293,9 +376,9 @@ public class RegistrarPersonaView extends JFrame {
     }
     
     private void establecerBotonMenosTelefonos() {
-        imgMenosTelefonos = new ImageIcon("mas.png");
+        imgMenosTelefonos = new ImageIcon("menoss.png");
         etiquetaMenosTelefonos = new JLabel();
-        etiquetaMenosTelefonos.setBounds(560, 310, 20, 20);
+        etiquetaMenosTelefonos.setBounds(778, 385, 20, 20);
         etiquetaMenosTelefonos.setIcon(new ImageIcon(imgMenosTelefonos.getImage().getScaledInstance(etiquetaMenosTelefonos.getWidth(), etiquetaMenosTelefonos.getHeight(), Image.SCALE_SMOOTH)));
         layeredPane.add(etiquetaMenosTelefonos, JLayeredPane.MODAL_LAYER);
     }
@@ -315,12 +398,37 @@ public class RegistrarPersonaView extends JFrame {
         comboBoxTipoDeTelefono3.setVisible(estado);
         etiquetaMenosTelefonos.setEnabled(estado);
         etiquetaMenosTelefonos.setVisible(estado);
+        
+    }
+   
+    public void bntEtiquetaMasTelefonos(){
+        etiquetaMasTelefonos.setEnabled(false);
+        etiquetaMasTelefonos.setVisible(false);
+    }
+    
+    public void mostrarMenosTelefonos(boolean estado){
+        cajaTextoTelefono2.setEnabled(estado);
+        cajaTextoTelefono2.setVisible(estado);
+        comboBoxTipoDeTelefono2.setEnabled(estado);
+        comboBoxTipoDeTelefono2.setVisible(estado);
+        cajaTextoTelefono3.setEnabled(estado);
+        cajaTextoTelefono3.setVisible(estado);
+        comboBoxTipoDeTelefono3.setEnabled(estado);
+        comboBoxTipoDeTelefono3.setVisible(estado);
+        etiquetaMenosTelefonos.setEnabled(estado);
+        etiquetaMenosTelefonos.setVisible(estado);
+        
+    }
+    
+    public void bntEtiquetaMenosTelefonos(){
+        etiquetaMasTelefonos.setEnabled(true);
+        etiquetaMasTelefonos.setVisible(true);
     }
     
     private void establecerComboBoxDeTipoDePersona(){
         String[] opciones = {"","ESTUDIANTE", "PROFESOR", "EMPLEADO"};
         comboBoxTipoDePersona = new JComboBox<>(opciones);
-        comboBoxTipoDePersona.setBounds(550, 250, 230, 40);
+        comboBoxTipoDePersona.setBounds(370, 120, 160, 40);
         layeredPane.add(comboBoxTipoDePersona, JLayeredPane.MODAL_LAYER);
     }
     
@@ -331,10 +439,10 @@ public class RegistrarPersonaView extends JFrame {
     private void establecerBtonRegistrar() {
         botonRegistrar = new JButton("Registrar");
         botonRegistrar.setFocusPainted(false);
-        botonRegistrar.setBounds(550, 450, 230, 60);  
-        botonRegistrar.setForeground(Color.WHITE);
-        botonRegistrar.setFont(new Font("Bernard MT Condensed", 0, 28));
-        Color colorFondoBtn = new Color(78, 39, 0);
+        botonRegistrar.setBounds(480, 490, 120, 40);  
+        botonRegistrar.setForeground(Color.BLACK);
+        botonRegistrar.setFont(new Font("Bernard MT Condensed", 0, 22));
+        Color colorFondoBtn = new Color(99, 203, 249);
         botonRegistrar.setBackground(colorFondoBtn);
         Color colorBorde = new Color(94, 94, 94);
         botonRegistrar.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
@@ -348,10 +456,10 @@ public class RegistrarPersonaView extends JFrame {
     private void establecerBtonCerrar() {
         botonCerrar = new JButton("Cerrar");
         botonCerrar.setFocusPainted(false);
-        botonCerrar.setBounds(200, 450, 230, 60);  
-        botonCerrar.setForeground(Color.WHITE);
-        botonCerrar.setFont(new Font("Bernard MT Condensed", 0, 28));
-        Color colorFondoBtn = new Color(78, 39, 0);
+        botonCerrar.setBounds(275, 490, 120, 40);  
+        botonCerrar.setForeground(Color.BLACK);
+        botonCerrar.setFont(new Font("Bernard MT Condensed", 0, 22));
+        Color colorFondoBtn = new Color(242, 68, 68);
         botonCerrar.setBackground(colorFondoBtn);
         Color colorBorde = new Color(94, 94, 94);
         botonCerrar.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));

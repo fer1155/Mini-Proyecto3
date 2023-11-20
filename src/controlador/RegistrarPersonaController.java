@@ -108,13 +108,15 @@ public class RegistrarPersonaController {
         @Override
         public void mouseClicked(MouseEvent e) {
             vista.mostrarMasTelefonos(true);
+            vista.bntEtiquetaMasTelefonos();
         }
     }
     
     class acciones3 extends MouseAdapter {
         @Override
         public void mouseClicked(MouseEvent e) {
-            vista.mostrarMasTelefonos(false);
+            vista.mostrarMenosTelefonos(false);
+            vista.bntEtiquetaMenosTelefonos();
         }
     }
     
@@ -122,13 +124,15 @@ public class RegistrarPersonaController {
         @Override
         public void mouseClicked(MouseEvent e) {
             vista.mostrarMasDirecciones(true);
+            vista.bntEtiquetaMasDirecciones();
         }
     }
     
     class acciones5 extends MouseAdapter {
         @Override
         public void mouseClicked(MouseEvent e) {
-            vista.mostrarMasDirecciones(false);
+            vista.mostrarMenosDirecciones(false);
+            vista.bntEtiquetaMenosDirecciones();
         }
     }
 }

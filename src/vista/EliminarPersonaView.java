@@ -36,7 +36,7 @@ public class EliminarPersonaView extends JFrame{
         setResizable(false);
         iniciarComponentes();
     }
-
+    
     private void iniciarComponentes() {
         establecerLayeredPanel();
         establecerPanel();
