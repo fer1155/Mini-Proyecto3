@@ -18,7 +18,13 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 public class ActualizarPersonaView extends JFrame{
     private JLayeredPane layeredPane;
     private JPanel panel;
-    private JLabel titulo;
+    private JLabel fechaNacimiento;
+    private JLabel nombre;
+    private JLabel tipoPersona;
+    private JLabel numeroID;
+    private JLabel direccion;
+    private JLabel telefono;
+    private JLabel numID;
     private ImageIcon imagenFondo;
     private JLabel texto;
     private JButton botonCerrar;
@@ -39,11 +45,15 @@ public class ActualizarPersonaView extends JFrame{
     private JTextField cajaTextoTelefono2V2;
     private JTextField cajaTextoTelefono3V2;
     private JComboBox<String> comboBoxTipoDeTelefono3V2;
+    private int width;
+    private int height;
     
     //Constructor de la ventana Actualizar Persona
     public ActualizarPersonaView(){
         this.setTitle("Directorio");
-        this.setBounds(200, 50, 900,600);
+        width = 900;
+        height = 450;
+        this.setBounds(200, 50,900 ,600);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         iniciarComponentes();
@@ -115,12 +125,12 @@ public class ActualizarPersonaView extends JFrame{
     }
     
      private void establecerTextoIdV1() {
-        texto = new JLabel("Número de identificación:");
-        texto.setBounds(170, 150, 530, 120);
+        numID = new JLabel("Número de identificación:");
+        numID.setBounds(170, 150, 530, 120);
         Color colorLetra = new Color(0, 0, 0);
-        texto.setForeground(colorLetra);
-        texto.setFont(new Font("Bookman Old Style", 1, 22));
-        layeredPane.add(texto, JLayeredPane.MODAL_LAYER);    
+        numID.setForeground(colorLetra);
+        numID.setFont(new Font("Bookman Old Style", 1, 22));
+        layeredPane.add(numID, JLayeredPane.MODAL_LAYER);    
     }
     
     private void establecerCajaDeTextoIdV1() {
@@ -137,57 +147,57 @@ public class ActualizarPersonaView extends JFrame{
     }
     
     private void establecerTextoTipoDePersona() {
-        titulo = new JLabel("Tipo de persona:");
-        titulo.setBounds(230, 80, 530, 120);
+        tipoPersona = new JLabel("Tipo de persona:");
+        tipoPersona.setBounds(230, 80, 530, 120);
         Color colorLetra = new Color(0, 0, 0);
-        titulo.setForeground(colorLetra);
-        titulo.setFont(new Font("Bookman Old Style", 1, 18));
-        layeredPane.add(titulo, JLayeredPane.MODAL_LAYER);    
+        tipoPersona.setForeground(colorLetra);
+        tipoPersona.setFont(new Font("Bookman Old Style", 1, 18));
+        layeredPane.add(tipoPersona, JLayeredPane.MODAL_LAYER);    
     }
     
     private void establecerTextoFechaDeNacimiento() {
-        titulo = new JLabel("Fecha de nacimiento:");
-        titulo.setBounds(230, 135, 530, 120);
+        fechaNacimiento = new JLabel("Fecha de nacimiento:");
+        fechaNacimiento.setBounds(230, 135, 530, 120);
         Color colorLetra = new Color(0, 0, 0);
-        titulo.setForeground(colorLetra);
-        titulo.setFont(new Font("Bookman Old Style", 1, 18));
-        layeredPane.add(titulo, JLayeredPane.MODAL_LAYER);    
+        fechaNacimiento.setForeground(colorLetra);
+        fechaNacimiento.setFont(new Font("Bookman Old Style", 1, 18));
+        layeredPane.add(fechaNacimiento, JLayeredPane.MODAL_LAYER);    
     }
     
     private void establecerTextoNumeroID() {
-        titulo = new JLabel("Número de ID:");
-        titulo.setBounds(230, 185, 530, 120);
+        numeroID = new JLabel("Número de ID:");
+        numeroID.setBounds(230, 185, 530, 120);
         Color colorLetra = new Color(0, 0, 0);
-        titulo.setForeground(colorLetra);
-        titulo.setFont(new Font("Bookman Old Style", 1, 18));
-        layeredPane.add(titulo, JLayeredPane.MODAL_LAYER);    
+        numeroID.setForeground(colorLetra);
+        numeroID.setFont(new Font("Bookman Old Style", 1, 18));
+        layeredPane.add(numeroID, JLayeredPane.MODAL_LAYER);    
     }
     
      private void establecerTextoNombre() {
-        titulo = new JLabel("Nombre completo:");
-        titulo.setBounds(230, 235, 530, 120);
+        nombre = new JLabel("Nombre completo:");
+        nombre.setBounds(230, 235, 530, 120);
         Color colorLetra = new Color(0, 0, 0);
-        titulo.setForeground(colorLetra);
-        titulo.setFont(new Font("Bookman Old Style", 1, 18));
-        layeredPane.add(titulo, JLayeredPane.MODAL_LAYER);    
+        nombre.setForeground(colorLetra);
+        nombre.setFont(new Font("Bookman Old Style", 1, 18));
+        layeredPane.add(nombre, JLayeredPane.MODAL_LAYER);    
     }
      
      private void establecerTextoDireccion() {
-        titulo = new JLabel("Dirección(es):");
-        titulo.setBounds(230, 285, 530, 120);
+        direccion = new JLabel("Dirección(es):");
+        direccion.setBounds(230, 285, 530, 120);
         Color colorLetra = new Color(0, 0, 0);
-        titulo.setForeground(colorLetra);
-        titulo.setFont(new Font("Bookman Old Style", 1, 18));
-        layeredPane.add(titulo, JLayeredPane.MODAL_LAYER);    
+        direccion.setForeground(colorLetra);
+        direccion.setFont(new Font("Bookman Old Style", 1, 18));
+        layeredPane.add(direccion, JLayeredPane.MODAL_LAYER);    
     }
      
      private void establecerTextoNumero() {
-        titulo = new JLabel("Número de teléfono(s):");
-        titulo.setBounds(230, 335, 530, 120);
+        telefono = new JLabel("Número de teléfono(s):");
+        telefono.setBounds(230, 335, 530, 120);
         Color colorLetra = new Color(0, 0, 0);
-        titulo.setForeground(colorLetra);
-        titulo.setFont(new Font("Bookman Old Style", 1, 18));
-        layeredPane.add(titulo, JLayeredPane.MODAL_LAYER);    
+        telefono.setForeground(colorLetra);
+        telefono.setFont(new Font("Bookman Old Style", 1, 18));
+        layeredPane.add(telefono, JLayeredPane.MODAL_LAYER);    
     }
     private void establecerBtonBuscarV1() {
         botonBuscar = new JButton("Buscar");
@@ -232,6 +242,10 @@ public class ActualizarPersonaView extends JFrame{
         botonBuscar.setVisible(estado);
         cajaTextoIdV1.setEnabled(estado);
         cajaTextoIdV1.setVisible(estado);
+        texto.setEnabled(estado);
+        texto.setVisible(estado);
+        numID.setEnabled(estado);
+        numID.setVisible(estado);
     }
     
     private void establecerTextoV2() {
@@ -425,6 +439,14 @@ public class ActualizarPersonaView extends JFrame{
         botonAtras.addActionListener(listenControl);
     }
     
+   public void setTamanoVentana(int width, int height){
+       //this.width = width;
+       //this.height = height;
+       this.setBounds(200, 50,width ,height);
+
+       
+   }
+    
     public void mostrarComponentesV2(boolean estado){
         textoV2.setEnabled(estado);
         textoV2.setVisible(estado);
@@ -456,6 +478,19 @@ public class ActualizarPersonaView extends JFrame{
         botonActualizar.setVisible(estado);
         botonAtras.setEnabled(estado);
         botonAtras.setVisible(estado);
+        fechaNacimiento.setEnabled(estado);
+        fechaNacimiento.setVisible(estado);
+        nombre.setEnabled(estado);
+        nombre.setVisible(estado);
+        tipoPersona.setEnabled(estado);
+        tipoPersona.setVisible(estado);
+        numeroID.setEnabled(estado);
+        numeroID.setVisible(estado);
+        direccion.setEnabled(estado);
+        direccion.setVisible(estado);
+        telefono.setEnabled(estado);
+        telefono.setVisible(estado);
+        
     }
     
     public void limpiarComponentes(){
