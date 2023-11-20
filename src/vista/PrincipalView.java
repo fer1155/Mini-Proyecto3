@@ -2,6 +2,7 @@ package vista;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -54,31 +55,31 @@ public class PrincipalView extends JFrame{
     }
 
     private void establecerFondo() {
-        imagenFondo = new ImageIcon("");
+        imagenFondo = new ImageIcon("Inicio.png");
         JLabel etiquetaFondo = new JLabel();
         etiquetaFondo.setBounds(0, 0, this.getWidth(), this.getHeight());
-        //etiquetaFondo.setIcon(new ImageIcon(imagenFondo.getImage().getScaledInstance(etiquetaFondo.getWidth(), etiquetaFondo.getHeight(), Image.SCALE_SMOOTH)));
+        etiquetaFondo.setIcon(new ImageIcon(imagenFondo.getImage().getScaledInstance(etiquetaFondo.getWidth(), etiquetaFondo.getHeight(), Image.SCALE_SMOOTH)));
         layeredPane.add(etiquetaFondo, JLayeredPane.PALETTE_LAYER);
     }
         
     private void establecerTitulo() {
-        titulo = new JLabel("Directorio");
-        titulo.setBounds(265, 20, 530, 120);
-        Color colorLetra = new Color(78, 39, 0);
+        titulo = new JLabel("Inicio");
+        titulo.setBounds(370, 20, 200, 120);
+        Color colorLetra = new Color(178, 239, 180);
         titulo.setForeground(colorLetra);
-        titulo.setFont(new Font("Bernard MT Condensed", 1, 85));
+        titulo.setFont(new Font("Bernard MT Condensed", 1, 75));
         layeredPane.add(titulo, JLayeredPane.MODAL_LAYER);    
     }
     
     private void establecerBtonRegistrarPersona() {
         botonRegistrarPersona = new JButton("Registrar Persona");
         botonRegistrarPersona.setFocusPainted(false);
-        botonRegistrarPersona.setBounds(550, 350, 230, 60);  
-        botonRegistrarPersona.setForeground(Color.WHITE);
+        botonRegistrarPersona.setBounds(500, 350, 250, 60);  
+        botonRegistrarPersona.setForeground(Color.BLACK);
         botonRegistrarPersona.setFont(new Font("Bernard MT Condensed", 0, 28));
-        Color colorFondoBtn = new Color(78, 39, 0);
+        Color colorFondoBtn = new Color(178, 239, 180);
         botonRegistrarPersona.setBackground(colorFondoBtn);
-        Color colorBorde = new Color(94, 94, 94);
+        Color colorBorde = new Color(0, 0, 0);
         botonRegistrarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
         layeredPane.add(botonRegistrarPersona, JLayeredPane.MODAL_LAYER);
     }
@@ -90,12 +91,12 @@ public class PrincipalView extends JFrame{
     private void establecerBtonMostrarPersona() {
         botonMostrarPersona = new JButton("Mostrar Personas");
         botonMostrarPersona.setFocusPainted(false);
-        botonMostrarPersona.setBounds(200, 350, 230, 60);  
-        botonMostrarPersona.setForeground(Color.WHITE);
+        botonMostrarPersona.setBounds(150, 350, 250, 60);  
+        botonMostrarPersona.setForeground(Color.BLACK);
         botonMostrarPersona.setFont(new Font("Bernard MT Condensed", 0, 28));
-        Color colorFondoBtn = new Color(78, 39, 0);
+        Color colorFondoBtn = new Color(178, 239, 180);
         botonMostrarPersona.setBackground(colorFondoBtn);
-        Color colorBorde = new Color(94, 94, 94);
+        Color colorBorde = new Color(0, 0, 0);
         botonMostrarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
         layeredPane.add(botonMostrarPersona, JLayeredPane.MODAL_LAYER);
     }
@@ -107,12 +108,12 @@ public class PrincipalView extends JFrame{
     private void establecerBtonActualizarPersona() {
         botonActualizarPersona = new JButton("Actualizar Persona");
         botonActualizarPersona.setFocusPainted(false);
-        botonActualizarPersona.setBounds(200, 200, 230, 60);  
-        botonActualizarPersona.setForeground(Color.WHITE);
+        botonActualizarPersona.setBounds(150, 200, 250, 60);  
+        botonActualizarPersona.setForeground(Color.BLACK);
         botonActualizarPersona.setFont(new Font("Bernard MT Condensed", 0, 28));
-        Color colorFondoBtn = new Color(78, 39, 0);
+        Color colorFondoBtn = new Color(178, 239, 180);
         botonActualizarPersona.setBackground(colorFondoBtn);
-        Color colorBorde = new Color(94, 94, 94);
+        Color colorBorde = new Color(0, 0, 0);
         botonActualizarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
         layeredPane.add(botonActualizarPersona, JLayeredPane.MODAL_LAYER);
     }
@@ -124,12 +125,12 @@ public class PrincipalView extends JFrame{
     private void establecerBtonEliminarPersona() {
         botonEliminarPersona = new JButton("Eliminar Persona");
         botonEliminarPersona.setFocusPainted(false);
-        botonEliminarPersona.setBounds(550, 200, 230, 60);  
-        botonEliminarPersona.setForeground(Color.WHITE);
+        botonEliminarPersona.setBounds(500, 200, 250, 60);  
+        botonEliminarPersona.setForeground(Color.BLACK);
         botonEliminarPersona.setFont(new Font("Bernard MT Condensed", 0, 28));
-        Color colorFondoBtn = new Color(78, 39, 0);
+        Color colorFondoBtn = new Color(178, 239, 180);
         botonEliminarPersona.setBackground(colorFondoBtn);
-        Color colorBorde = new Color(94, 94, 94);
+        Color colorBorde = new Color(0, 0, 0);
         botonEliminarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
         layeredPane.add(botonEliminarPersona, JLayeredPane.MODAL_LAYER);
     }
