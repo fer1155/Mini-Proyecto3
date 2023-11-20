@@ -15,8 +15,10 @@ public class ActualizarPersonaController {
     public ActualizarPersonaController(ActualizarPersonaView vista, ActualizarPersonaModel modelo) {
         this.vista = vista;
         this.modelo = modelo;
+        
         vista.setVisible(true);
         vista.mostrarComponentesV2(false);
+        
         this.vista.addBtonCerrarListenerV1(new acciones());
         this.vista.addBtonBuscarListenerV1(new acciones());
         this.vista.addBtonAtrasListener(new acciones());

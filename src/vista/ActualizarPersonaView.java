@@ -41,7 +41,7 @@ public class ActualizarPersonaView extends JFrame{
     //Constructor de la ventana Actualizar Persona
     public ActualizarPersonaView(){
         this.setTitle("Directorio");
-        this.setBounds(200, 50, 900, 600);
+        this.setBounds(200, 80, 900, 600);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         iniciarComponentes();
