@@ -78,11 +78,11 @@ public class EliminarPersonaView extends JFrame{
     }
         
     private void establecerTexto() {
-        texto = new JLabel("Directorio");
-        texto.setBounds(265, 20, 530, 120);
+        texto = new JLabel("Eliminar Usuario");
+        texto.setBounds(310, 20, 280, 120);
         Color colorLetra = new Color(255, 255, 255);
         texto.setForeground(colorLetra);
-        texto.setFont(new Font("Bernard MT Condensed", 1, 85));
+        texto.setFont(new Font("Bernard MT Condensed", 1, 40));
         layeredPane.add(texto, JLayeredPane.MODAL_LAYER);    
     }
     
@@ -154,7 +154,7 @@ public class EliminarPersonaView extends JFrame{
     private void establecerBtonBuscar() {
         botonBuscar = new JButton("Buscar");
         botonBuscar.setFocusPainted(false);
-        botonBuscar.setBounds(500, 300, 230, 60);  
+        botonBuscar.setBounds(500, 300, 200, 60);  
         botonBuscar.setForeground(Color.BLACK);
         botonBuscar.setFont(new Font("Bernard MT Condensed", 0, 28));
         Color colorFondoBtn = new Color(255, 255, 255);
