@@ -39,6 +39,7 @@ public class ActualizarPersonaController {
                     JOptionPane.showMessageDialog(vista.obtenerPanel(), "Se encontro la persona con id " + vista.getCajaDeTextoIdV1(), "Info", JOptionPane.INFORMATION_MESSAGE);
                     vista.limpiarComponentes();
                     vista.mostrarComponentesV1(false);
+                    //vista.setTamanoVentana(900,600);
                     vista.establecerDatosDeLaPersona(personaBuscada.getNombreCompleto(), personaBuscada.getNumId(), personaBuscada.getFechaDeNacimiento(), personaBuscada.getDireccion(), personaBuscada.getDireccion2(), personaBuscada.getTelefono(), personaBuscada.getTipoTelefono(), personaBuscada.getTipo(), personaBuscada.getTelefono2(), personaBuscada.getTipoTelefono2(), personaBuscada.getTelefono3(), personaBuscada.getTipoTelefono3());
                     vista.mostrarComponentesV2(true);
                 
