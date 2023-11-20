@@ -391,7 +391,7 @@ public class RegistrarPersonaView extends JFrame {
     private void establecerBtonRegistrar() {
         botonRegistrar = new JButton("Registrar");
         botonRegistrar.setFocusPainted(false);
-        botonRegistrar.setBounds(480, 490, 120, 50);  
+        botonRegistrar.setBounds(480, 490, 120, 40);  
         botonRegistrar.setForeground(Color.BLACK);
         botonRegistrar.setFont(new Font("Bernard MT Condensed", 0, 22));
         Color colorFondoBtn = new Color(99, 203, 249);
@@ -408,7 +408,7 @@ public class RegistrarPersonaView extends JFrame {
     private void establecerBtonCerrar() {
         botonCerrar = new JButton("Cerrar");
         botonCerrar.setFocusPainted(false);
-        botonCerrar.setBounds(275, 490, 120, 50);  
+        botonCerrar.setBounds(275, 490, 120, 40);  
         botonCerrar.setForeground(Color.BLACK);
         botonCerrar.setFont(new Font("Bernard MT Condensed", 0, 22));
         Color colorFondoBtn = new Color(242, 68, 68);
