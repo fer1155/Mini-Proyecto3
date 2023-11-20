@@ -69,7 +69,7 @@ public class MostrarPersonaView extends JFrame{
     }
 
     private void establecerFondo() {
-        imagenFondo = new ImageIcon("Fondo 5.jpg");
+        imagenFondo = new ImageIcon("FondoMostrar.jpg");
         JLabel etiquetaFondo = new JLabel();
         etiquetaFondo.setBounds(0, 0, this.getWidth(), this.getHeight());
         etiquetaFondo.setIcon(new ImageIcon(imagenFondo.getImage().getScaledInstance(etiquetaFondo.getWidth(), etiquetaFondo.getHeight(), Image.SCALE_SMOOTH)));
@@ -116,7 +116,7 @@ public class MostrarPersonaView extends JFrame{
     }
     
     private void establecerBtonMostrarPersonas() {
-        botonMostrarPersonas = new JButton("Mostrar todas las persona");
+        botonMostrarPersonas = new JButton("Mostrar todas las personas");
         botonMostrarPersonas.setFocusPainted(false);
         botonMostrarPersonas.setBounds(500, 150, 300, 60);  
         botonMostrarPersonas.setForeground(Color.BLACK);
@@ -133,7 +133,7 @@ public class MostrarPersonaView extends JFrame{
     }
     
     private void establecerBtonMostrarPersona() {
-        botonMostrarPersona = new JButton("Buscar persona individualmente");
+        botonMostrarPersona = new JButton("Buscar persona por ID");
         botonMostrarPersona.setFocusPainted(false);
         botonMostrarPersona.setBounds(100, 150, 300, 60);  
         botonMostrarPersona.setForeground(Color.BLACK);
