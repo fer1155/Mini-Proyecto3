@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MostrarPersonaModel {
     
-    private PrincipalModel modeloGeneral;
+    private final PrincipalModel modeloGeneral;
     
     public MostrarPersonaModel(PrincipalModel modelo) {
         this.modeloGeneral = modelo;
