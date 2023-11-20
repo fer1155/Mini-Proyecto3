@@ -63,24 +63,24 @@ public class PrincipalView extends JFrame{
     }
         
     private void establecerTitulo() {
-        titulo = new JLabel("Inicio");
-        titulo.setBounds(370, 20, 200, 120);
-        Color colorLetra = new Color(178, 239, 180);
+        titulo = new JLabel("-- INICIO --");
+        titulo.setBounds(210, 40, 500, 140);
+        Color colorLetra = new Color(255, 255, 255);
         titulo.setForeground(colorLetra);
-        titulo.setFont(new Font("Bernard MT Condensed", 1, 75));
+        titulo.setFont(new Font("Bauhaus 93", 1, 100));
         layeredPane.add(titulo, JLayeredPane.MODAL_LAYER);    
     }
     
     private void establecerBtonRegistrarPersona() {
         botonRegistrarPersona = new JButton("Registrar Persona");
         botonRegistrarPersona.setFocusPainted(false);
-        botonRegistrarPersona.setBounds(500, 350, 250, 60);  
+        botonRegistrarPersona.setBounds(150, 200, 250, 60);  
         botonRegistrarPersona.setForeground(Color.BLACK);
         botonRegistrarPersona.setFont(new Font("Bernard MT Condensed", 0, 28));
-        Color colorFondoBtn = new Color(178, 239, 180);
+        Color colorFondoBtn = new Color(255, 255, 255);
         botonRegistrarPersona.setBackground(colorFondoBtn);
         Color colorBorde = new Color(0, 0, 0);
-        botonRegistrarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        botonRegistrarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,false));
         layeredPane.add(botonRegistrarPersona, JLayeredPane.MODAL_LAYER);
     }
     
@@ -94,10 +94,10 @@ public class PrincipalView extends JFrame{
         botonMostrarPersona.setBounds(150, 350, 250, 60);  
         botonMostrarPersona.setForeground(Color.BLACK);
         botonMostrarPersona.setFont(new Font("Bernard MT Condensed", 0, 28));
-        Color colorFondoBtn = new Color(178, 239, 180);
+        Color colorFondoBtn = new Color(255, 255, 255);
         botonMostrarPersona.setBackground(colorFondoBtn);
         Color colorBorde = new Color(0, 0, 0);
-        botonMostrarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        botonMostrarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,false));
         layeredPane.add(botonMostrarPersona, JLayeredPane.MODAL_LAYER);
     }
     
@@ -108,13 +108,13 @@ public class PrincipalView extends JFrame{
     private void establecerBtonActualizarPersona() {
         botonActualizarPersona = new JButton("Actualizar Persona");
         botonActualizarPersona.setFocusPainted(false);
-        botonActualizarPersona.setBounds(150, 200, 250, 60);  
+        botonActualizarPersona.setBounds(500, 350, 250, 60);  
         botonActualizarPersona.setForeground(Color.BLACK);
         botonActualizarPersona.setFont(new Font("Bernard MT Condensed", 0, 28));
-        Color colorFondoBtn = new Color(178, 239, 180);
+        Color colorFondoBtn = new Color(255, 255, 255);
         botonActualizarPersona.setBackground(colorFondoBtn);
         Color colorBorde = new Color(0, 0, 0);
-        botonActualizarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        botonActualizarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,false));
         layeredPane.add(botonActualizarPersona, JLayeredPane.MODAL_LAYER);
     }
     
@@ -128,10 +128,10 @@ public class PrincipalView extends JFrame{
         botonEliminarPersona.setBounds(500, 200, 250, 60);  
         botonEliminarPersona.setForeground(Color.BLACK);
         botonEliminarPersona.setFont(new Font("Bernard MT Condensed", 0, 28));
-        Color colorFondoBtn = new Color(178, 239, 180);
+        Color colorFondoBtn = new Color(255, 255, 255);
         botonEliminarPersona.setBackground(colorFondoBtn);
         Color colorBorde = new Color(0, 0, 0);
-        botonEliminarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        botonEliminarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,false));
         layeredPane.add(botonEliminarPersona, JLayeredPane.MODAL_LAYER);
     }
     
