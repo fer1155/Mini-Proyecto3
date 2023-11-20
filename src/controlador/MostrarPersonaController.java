@@ -36,12 +36,12 @@ public class MostrarPersonaController {
             if(e.getActionCommand().equalsIgnoreCase("Cerrar")){
                 vista.dispose();
             }
-            if(e.getActionCommand().equalsIgnoreCase("Mostrar todas las persona")){
+            if(e.getActionCommand().equalsIgnoreCase("Mostrar todas las personas")){
                 String textoAMostrar = establecerInfoGeneral();
                 //this.vista.setCajaDeTextoPrueba(listadoEstudiantes);
                 JOptionPane.showMessageDialog(vista.obtenerPanel(), vista.ventanaEmergente(textoAMostrar), "Info", JOptionPane.PLAIN_MESSAGE);
             } 
-            if(e.getActionCommand().equalsIgnoreCase("Buscar persona individualmente")){
+            if(e.getActionCommand().equalsIgnoreCase("Buscar persona por ID")){
                 mostrarCampos();
             }
             if(e.getActionCommand().equalsIgnoreCase("Buscar")){

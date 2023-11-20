@@ -6,11 +6,8 @@
         <group/>
 =======
         <group>
-            <file>file:/C:/Users/DELL/Documents/Proyectos%20JAVA/Mini-Proyecto3/src/vista/MostrarPersonaView.java</file>
-            <file>file:/C:/Users/DELL/Documents/Proyectos%20JAVA/Mini-Proyecto3/src/vista/RegistrarPersonaView.java</file>
-            <file>file:/C:/Users/DELL/Documents/Proyectos%20JAVA/Mini-Proyecto3/src/miniproyecto3pkg/Main.java</file>
             <file>file:/C:/Users/DELL/Documents/Proyectos%20JAVA/Mini-Proyecto3/src/modelo/Persona.java</file>
-            <file>file:/C:/Users/DELL/Documents/Proyectos%20JAVA/Mini-Proyecto3/src/vista/ActualizarPersonaView.java</file>
+            <file>file:/C:/Users/DELL/Documents/Proyectos%20JAVA/Mini-Proyecto3/src/vista/PrincipalView.java</file>
         </group>
 >>>>>>> develop
     </open-files>
