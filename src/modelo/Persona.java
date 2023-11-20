@@ -127,6 +127,6 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Nombre Completo: " + NombreCompleto + "\n" + "Número de identificación: " + numId + "\n" + "Fecha de Nacimiento: " + fechaDeNacimiento + "\n" + "Direcciones: " + direccion + ", " + direccion2 + "\n" + "Teléfonos: " + telefono + " - "  + telefono2 + " - "+ telefono3 + "\n" + "Tipos de Teléfonos: " + tipoTelefono + " - " + tipoTelefono2 + " - " + tipoTelefono3 ;
+        return "-------------------------------------------------" + "\n" + "Nombre Completo: " + NombreCompleto + "\n" + "Número de identificación: " + numId + "\n" + "Fecha de Nacimiento: " + fechaDeNacimiento + "\n" + "Direcciones: " + direccion + " / " + direccion2 + "\n" + "Teléfonos: " + telefono + " - "  + telefono2 + " - "+ telefono3 + "\n" + "Tipos de Teléfonos: " + tipoTelefono + " - " + tipoTelefono2 + " - " + tipoTelefono3 + "\n" + "-------------------------------------------------" ;
     }
 }

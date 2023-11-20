@@ -33,7 +33,7 @@ public class MostrarPersonaView extends JFrame{
     //Constructor de la ventana Mostrar Personas
     public MostrarPersonaView(){
         this.setTitle("Buscar Usuario");
-        this.setBounds(200, 50, 900, 600);
+        this.setBounds(200, 50, 900, 500);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         iniciarComponentes();
@@ -69,7 +69,7 @@ public class MostrarPersonaView extends JFrame{
     }
 
     private void establecerFondo() {
-        imagenFondo = new ImageIcon("FondoMostrar.png");
+        imagenFondo = new ImageIcon("Fondo 5.jpg");
         JLabel etiquetaFondo = new JLabel();
         etiquetaFondo.setBounds(0, 0, this.getWidth(), this.getHeight());
         etiquetaFondo.setIcon(new ImageIcon(imagenFondo.getImage().getScaledInstance(etiquetaFondo.getWidth(), etiquetaFondo.getHeight(), Image.SCALE_SMOOTH)));
@@ -87,7 +87,7 @@ public class MostrarPersonaView extends JFrame{
     
     private void establecerCajaDeTextoId() {
         cajaTextoId = new JTextField();
-        cajaTextoId.setBounds(300, 300, 300, 45);
+        cajaTextoId.setBounds(300, 240, 300, 45);
         cajaTextoId.setFont(new Font("Centaur", 1, 15));
         Color colorBorde = new Color(94, 94, 94);
         cajaTextoId.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
@@ -101,7 +101,7 @@ public class MostrarPersonaView extends JFrame{
     private void establecerBtonBuscar() {
         botonBuscar = new JButton("Buscar");
         botonBuscar.setFocusPainted(false);
-        botonBuscar.setBounds(350, 350, 200, 60);  
+        botonBuscar.setBounds(550, 320, 200, 60);  
         botonBuscar.setForeground(Color.BLACK);
         botonBuscar.setFont(new Font("Bernard MT Condensed", 0, 25));
         Color colorFondoBtn = new Color(255, 255, 255);
@@ -152,7 +152,7 @@ public class MostrarPersonaView extends JFrame{
     private void establecerBtonCerrar() {
         botonCerrar = new JButton("Cerrar");
         botonCerrar.setFocusPainted(false);
-        botonCerrar.setBounds(350, 450, 200, 60);  
+        botonCerrar.setBounds(150, 320, 200, 60);  
         botonCerrar.setForeground(Color.BLACK);
         botonCerrar.setFont(new Font("Bernard MT Condensed", 0, 25));
         Color colorFondoBtn = new Color(255, 255, 255);
