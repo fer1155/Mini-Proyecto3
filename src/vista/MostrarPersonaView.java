@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
@@ -15,7 +14,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import modelo.Persona;
 
 public class MostrarPersonaView extends JFrame{
     
@@ -33,8 +31,7 @@ public class MostrarPersonaView extends JFrame{
     //Constructor de la ventana Mostrar Personas
     public MostrarPersonaView(){
         this.setTitle("Buscar Usuario");
-        this.setBounds(200, 50, 900, 500);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setBounds(370, 80, 550, 550);
         setResizable(false);
         iniciarComponentes();
     }
@@ -49,7 +46,6 @@ public class MostrarPersonaView extends JFrame{
         establecerBtonMostrarPersonas();
         establecerBtonMostrarPersona();
         establecerBtonCerrar();
-        establecerTextoPrueba();
     }
     
     private void establecerLayeredPanel() {
@@ -69,7 +65,7 @@ public class MostrarPersonaView extends JFrame{
     }
 
     private void establecerFondo() {
-        imagenFondo = new ImageIcon("FondoMostrar.jpg");
+        imagenFondo = new ImageIcon("Fondo1.jpg");
         JLabel etiquetaFondo = new JLabel();
         etiquetaFondo.setBounds(0, 0, this.getWidth(), this.getHeight());
         etiquetaFondo.setIcon(new ImageIcon(imagenFondo.getImage().getScaledInstance(etiquetaFondo.getWidth(), etiquetaFondo.getHeight(), Image.SCALE_SMOOTH)));
@@ -78,19 +74,19 @@ public class MostrarPersonaView extends JFrame{
         
     private void establecerTitulo() {
         titulo = new JLabel("Buscar Usuarios");
-        titulo.setBounds(320, 20, 260, 80);
+        titulo.setBounds(95, 20, 400, 80);
         Color colorLetra = new Color(255, 255, 255);
         titulo.setForeground(colorLetra);
-        titulo.setFont(new Font("Bernard MT Condensed", 1, 40));
+        titulo.setFont(new Font("Bernard MT Condensed", 1, 55));
         layeredPane.add(titulo, JLayeredPane.MODAL_LAYER);    
     }
     
     private void establecerCajaDeTextoId() {
         cajaTextoId = new JTextField();
-        cajaTextoId.setBounds(300, 240, 300, 45);
-        cajaTextoId.setFont(new Font("Centaur", 1, 15));
+        cajaTextoId.setBounds(90, 300, 200, 35);
+        cajaTextoId.setFont(new Font("Arial", 1, 20));
         Color colorBorde = new Color(94, 94, 94);
-        cajaTextoId.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
+        cajaTextoId.setBorder(BorderFactory.createLineBorder(colorBorde,4,false));
         layeredPane.add(cajaTextoId, JLayeredPane.MODAL_LAYER);
     }
     
@@ -101,13 +97,13 @@ public class MostrarPersonaView extends JFrame{
     private void establecerBtonBuscar() {
         botonBuscar = new JButton("Buscar");
         botonBuscar.setFocusPainted(false);
-        botonBuscar.setBounds(550, 320, 200, 60);  
+        botonBuscar.setBounds(310, 290, 120, 50);  
         botonBuscar.setForeground(Color.BLACK);
-        botonBuscar.setFont(new Font("Bernard MT Condensed", 0, 25));
+        botonBuscar.setFont(new Font("Segoe UI Symbol", 1, 20));
         Color colorFondoBtn = new Color(255, 255, 255);
         botonBuscar.setBackground(colorFondoBtn);
-        Color colorBorde = new Color(0, 0, 0);
-        botonBuscar.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        Color colorBorde = new Color(94, 94, 94);
+        botonBuscar.setBorder(BorderFactory.createLineBorder(colorBorde,3,false));
         layeredPane.add(botonBuscar, JLayeredPane.MODAL_LAYER);
     }
     
@@ -118,13 +114,13 @@ public class MostrarPersonaView extends JFrame{
     private void establecerBtonMostrarPersonas() {
         botonMostrarPersonas = new JButton("Mostrar todas las personas");
         botonMostrarPersonas.setFocusPainted(false);
-        botonMostrarPersonas.setBounds(500, 150, 300, 60);  
+        botonMostrarPersonas.setBounds(130, 140, 280, 55);  
         botonMostrarPersonas.setForeground(Color.BLACK);
-        botonMostrarPersonas.setFont(new Font("Bernard MT Condensed", 0, 25));
+        botonMostrarPersonas.setFont(new Font("Segoe UI Symbol", 1, 20));
         Color colorFondoBtn = new Color(255, 255, 255);
         botonMostrarPersonas.setBackground(colorFondoBtn);
-        Color colorBorde = new Color(0, 0, 0);
-        botonMostrarPersonas.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        Color colorBorde = new Color(94, 94, 94);
+        botonMostrarPersonas.setBorder(BorderFactory.createLineBorder(colorBorde,3,false));
         layeredPane.add(botonMostrarPersonas, JLayeredPane.MODAL_LAYER);
     }
     
@@ -135,13 +131,13 @@ public class MostrarPersonaView extends JFrame{
     private void establecerBtonMostrarPersona() {
         botonMostrarPersona = new JButton("Buscar persona por ID");
         botonMostrarPersona.setFocusPainted(false);
-        botonMostrarPersona.setBounds(100, 150, 300, 60);  
+        botonMostrarPersona.setBounds(150, 210, 240, 55);  
         botonMostrarPersona.setForeground(Color.BLACK);
-        botonMostrarPersona.setFont(new Font("Bernard MT Condensed", 0, 25));
+        botonMostrarPersona.setFont(new Font("Segoe UI Symbol", 1, 20));
         Color colorFondoBtn = new Color(255, 255, 255);
         botonMostrarPersona.setBackground(colorFondoBtn);
-        Color colorBorde = new Color(0, 0, 0);
-        botonMostrarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        Color colorBorde = new Color(94, 94, 94);
+        botonMostrarPersona.setBorder(BorderFactory.createLineBorder(colorBorde,3,false));
         layeredPane.add(botonMostrarPersona, JLayeredPane.MODAL_LAYER);
     }
     
@@ -152,13 +148,13 @@ public class MostrarPersonaView extends JFrame{
     private void establecerBtonCerrar() {
         botonCerrar = new JButton("Cerrar");
         botonCerrar.setFocusPainted(false);
-        botonCerrar.setBounds(150, 320, 200, 60);  
+        botonCerrar.setBounds(210, 380, 120, 50);  
         botonCerrar.setForeground(Color.BLACK);
-        botonCerrar.setFont(new Font("Bernard MT Condensed", 0, 25));
+        botonCerrar.setFont(new Font("Segoe UI Symbol", 1, 20));
         Color colorFondoBtn = new Color(255, 255, 255);
         botonCerrar.setBackground(colorFondoBtn);
-        Color colorBorde = new Color(0, 0, 0);
-        botonCerrar.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        Color colorBorde = new Color(94, 94, 94);
+        botonCerrar.setBorder(BorderFactory.createLineBorder(colorBorde,3,false));
         layeredPane.add(botonCerrar, JLayeredPane.MODAL_LAYER);
     }
     
@@ -169,8 +165,10 @@ public class MostrarPersonaView extends JFrame{
     public JPanel ventanaEmergente(String textoAMostrar){
         JPanel panelVentanaEmergente = new JPanel();
         JTextArea textArea = new JTextArea(textoAMostrar);
-        textArea.setColumns(30);  // Número de columnas
+        textArea.setColumns(30);
         textArea.setRows(30);
+        textArea.setEnabled(false);
+        textArea.setDisabledTextColor(Color.BLACK);
         JScrollPane scrollPane = new JScrollPane(textArea);
         panelVentanaEmergente.add(scrollPane);
         return panelVentanaEmergente;
@@ -184,19 +182,6 @@ public class MostrarPersonaView extends JFrame{
     }
     
     public void limpiarCampos(){
-        cajaTextoId.setText(" ");
-    }
-    
-    private void establecerTextoPrueba() {
-        textPrueba = new JLabel();
-        textPrueba.setBounds(350, 200, 530, 120);
-        Color colorLetra = new Color(255, 255, 255);
-        textPrueba.setForeground(colorLetra);
-        textPrueba.setFont(new Font("Bernard MT Condensed", 1, 20));
-        layeredPane.add(textPrueba, JLayeredPane.MODAL_LAYER);    
-    }
-    
-    public void setCajaDeTextoPrueba(String texto){
-        textPrueba.setText(texto);
+        cajaTextoId.setText("");
     }
 }
