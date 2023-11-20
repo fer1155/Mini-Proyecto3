@@ -4,9 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import modelo.MostrarPersonaModel;
 import modelo.Persona;
 import vista.MostrarPersonaView;
@@ -21,6 +18,7 @@ public class MostrarPersonaController {
         this.vista = vista;
         this.modelo = modelo;
         this.mostrarCampos = false;
+        
         vista.mostrarCampos(false);
         vista.setVisible(true);
          
@@ -36,18 +34,24 @@ public class MostrarPersonaController {
             if(e.getActionCommand().equalsIgnoreCase("Cerrar")){
                 vista.dispose();
             }
+            
             if(e.getActionCommand().equalsIgnoreCase("Mostrar todas las personas")){
                 String textoAMostrar = establecerInfoGeneral();
-                //this.vista.setCajaDeTextoPrueba(listadoEstudiantes);
-                JOptionPane.showMessageDialog(vista.obtenerPanel(), vista.ventanaEmergente(textoAMostrar), "Info", JOptionPane.PLAIN_MESSAGE);
-            } 
+                JOptionPane.showMessageDialog(vista.obtenerPanel(), vista.ventanaEmergente(textoAMostrar), "Infomacion General", JOptionPane.PLAIN_MESSAGE);
+            }
+            
             if(e.getActionCommand().equalsIgnoreCase("Buscar persona por ID")){
                 mostrarCampos();
             }
+            
             if(e.getActionCommand().equalsIgnoreCase("Buscar")){
-                String textoAMostrar = establecerInfoIndividual();
-                vista.limpiarCampos();
-                JOptionPane.showMessageDialog(vista.obtenerPanel(), vista.ventanaEmergente(textoAMostrar), "Info", JOptionPane.PLAIN_MESSAGE);
+                if("".equals(vista.getCajaDeTextoId())){
+                    JOptionPane.showMessageDialog(vista.obtenerPanel(), "Porfavor rellene el ID", "Alerta", JOptionPane.WARNING_MESSAGE);
+                }else{
+                    String textoAMostrar = establecerInfoIndividual();
+                    vista.limpiarCampos();
+                    JOptionPane.showMessageDialog(vista.obtenerPanel(), vista.ventanaEmergente(textoAMostrar), "Info Individual", JOptionPane.PLAIN_MESSAGE);
+                }
             }
         }
     }
@@ -96,7 +100,7 @@ public class MostrarPersonaController {
         ArrayList<Persona> estudiantes = modelo.mostrarListadoPersonas("Estudiante");
         for(Persona estudiante : estudiantes) {
             if(vista.getCajaDeTextoId().equals(estudiante.getNumId())){
-                textoInfoGeneral += "\nESTUDIANTE:\n\n";
+                textoInfoGeneral += "\nESTUDIANTE:\n";
                 textoInfoGeneral += estudiante + "\n\n";
                 seEncontroLaPersona = true; 
             }                             
@@ -105,7 +109,7 @@ public class MostrarPersonaController {
         ArrayList<Persona> profesores = modelo.mostrarListadoPersonas("Profesor");
         for(Persona profesor : profesores) {
             if(vista.getCajaDeTextoId().equals(profesor.getNumId())){
-                textoInfoGeneral += "\nPROFESOR:\n\n";
+                textoInfoGeneral += "\nPROFESOR:\n";
                 textoInfoGeneral += profesor + "\n\n";
                 seEncontroLaPersona = true; 
             }                             
@@ -114,7 +118,7 @@ public class MostrarPersonaController {
         ArrayList<Persona> empleados = modelo.mostrarListadoPersonas("Empleado");
         for(Persona empleado : empleados) {
             if(vista.getCajaDeTextoId().equals(empleado.getNumId())){
-                textoInfoGeneral += "\nEMPLEADO:\n\n";
+                textoInfoGeneral += "\nEMPLEADO:\n";
                 textoInfoGeneral += empleado + "\n\n";
                 seEncontroLaPersona = true; 
             }                             

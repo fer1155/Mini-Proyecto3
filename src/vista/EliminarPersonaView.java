@@ -14,7 +14,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class EliminarPersonaView extends JFrame{
     private JLayeredPane layeredPane;
@@ -33,8 +32,7 @@ public class EliminarPersonaView extends JFrame{
     //Constructor de la ventana Eliminar Persona
     public EliminarPersonaView(){
         this.setTitle("Eliminar Usuario");
-        this.setBounds(200, 50, 900, 450);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setBounds(240, 80, 800, 450);
         setResizable(false);
         iniciarComponentes();
     }
@@ -79,7 +77,7 @@ public class EliminarPersonaView extends JFrame{
         
     private void establecerTexto() {
         texto = new JLabel("Eliminar Usuario");
-        texto.setBounds(310, 20, 280, 120);
+        texto.setBounds(260, 20, 280, 120);
         Color colorLetra = new Color(255, 255, 255);
         texto.setForeground(colorLetra);
         texto.setFont(new Font("Bernard MT Condensed", 1, 40));
@@ -88,7 +86,7 @@ public class EliminarPersonaView extends JFrame{
     
     private void establecerTexto2() {
         texto2 = new JLabel("Número ID: ");
-        texto2.setBounds(260, 190, 180, 50);
+        texto2.setBounds(210, 190, 180, 50);
         Color colorLetra = new Color(255, 255, 255);
         texto2.setForeground(colorLetra);
         texto2.setFont(new Font("Arial", 0, 25));
@@ -97,8 +95,8 @@ public class EliminarPersonaView extends JFrame{
     
     private void establecerCajaDeTextoId() {
         cajaTextoId = new JTextField();
-        cajaTextoId.setBounds(430, 190, 200, 50);
-        cajaTextoId.setFont(new Font("Centaur", 1, 15));
+        cajaTextoId.setBounds(380, 190, 200, 40);
+        cajaTextoId.setFont(new Font("Arial", 1, 20));
         Color colorBorde = new Color(255, 255, 255);
         cajaTextoId.setBorder(BorderFactory.createLineBorder(colorBorde,4,true));
         layeredPane.add(cajaTextoId, JLayeredPane.MODAL_LAYER);
@@ -111,22 +109,24 @@ public class EliminarPersonaView extends JFrame{
     public void establecerTextArea(){
         textArea = new JTextArea("");
         textArea.setColumns(20);  // Número de columnas
-        textArea.setRows(40);
+        textArea.setRows(8);
+        textArea.setEnabled(false);
+        textArea.setDisabledTextColor(Color.BLACK);
         scrollPane = new JScrollPane(textArea);
-        scrollPane.setBounds(150, 160, 600, 100);
+        scrollPane.setBounds(100, 140, 600, 130);
         layeredPane.add(scrollPane, JLayeredPane.MODAL_LAYER);
     }
     
     private void establecerBtonEliminar() {
         botonEliminar = new JButton("Eliminar");
         botonEliminar.setFocusPainted(false);
-        botonEliminar.setBounds(500, 300, 230, 60);  
+        botonEliminar.setBounds(450, 300, 230, 60);  
         botonEliminar.setForeground(Color.BLACK);
         botonEliminar.setFont(new Font("Bernard MT Condensed", 0, 28));
         Color colorFondoBtn = new Color(255, 255, 255);
         botonEliminar.setBackground(colorFondoBtn);
         Color colorBorde = new Color(0, 0, 0);
-        botonEliminar.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        botonEliminar.setBorder(BorderFactory.createLineBorder(colorBorde,3,false));
         layeredPane.add(botonEliminar, JLayeredPane.MODAL_LAYER);
     }
     
@@ -137,13 +137,13 @@ public class EliminarPersonaView extends JFrame{
     private void establecerBtonAtras() {
         botonAtras = new JButton("Atras");
         botonAtras.setFocusPainted(false);
-        botonAtras.setBounds(200, 300, 200, 60);  
+        botonAtras.setBounds(150, 300, 200, 60);  
         botonAtras.setForeground(Color.BLACK);
         botonAtras.setFont(new Font("Bernard MT Condensed", 0, 28));
         Color colorFondoBtn = new Color(255, 255, 255);
         botonAtras.setBackground(colorFondoBtn);
         Color colorBorde = new Color(0, 0, 0);
-        botonAtras.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        botonAtras.setBorder(BorderFactory.createLineBorder(colorBorde,3,false));
         layeredPane.add(botonAtras, JLayeredPane.MODAL_LAYER);
     }
     
@@ -154,13 +154,13 @@ public class EliminarPersonaView extends JFrame{
     private void establecerBtonBuscar() {
         botonBuscar = new JButton("Buscar");
         botonBuscar.setFocusPainted(false);
-        botonBuscar.setBounds(500, 300, 200, 60);  
+        botonBuscar.setBounds(450, 300, 200, 60);  
         botonBuscar.setForeground(Color.BLACK);
         botonBuscar.setFont(new Font("Bernard MT Condensed", 0, 28));
         Color colorFondoBtn = new Color(255, 255, 255);
         botonBuscar.setBackground(colorFondoBtn);
         Color colorBorde = new Color(0, 0, 0);
-        botonBuscar.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        botonBuscar.setBorder(BorderFactory.createLineBorder(colorBorde,3,false));
         layeredPane.add(botonBuscar, JLayeredPane.MODAL_LAYER);
     }
     
@@ -171,13 +171,13 @@ public class EliminarPersonaView extends JFrame{
     private void establecerBtonCerrar() {
         botonCerrar = new JButton("Cerrar");
         botonCerrar.setFocusPainted(false);
-        botonCerrar.setBounds(200, 300, 200, 60);  
+        botonCerrar.setBounds(150, 300, 200, 60);  
         botonCerrar.setForeground(Color.BLACK);
         botonCerrar.setFont(new Font("Bernard MT Condensed", 0, 28));
         Color colorFondoBtn = new Color(255, 255, 255);
         botonCerrar.setBackground(colorFondoBtn);
         Color colorBorde = new Color(0, 0, 0);
-        botonCerrar.setBorder(BorderFactory.createLineBorder(colorBorde,3,true));
+        botonCerrar.setBorder(BorderFactory.createLineBorder(colorBorde,3,false));
         layeredPane.add(botonCerrar, JLayeredPane.MODAL_LAYER);
     }
     
