@@ -69,7 +69,7 @@ public class MostrarPersonaView extends JFrame{
     }
 
     private void establecerFondo() {
-        imagenFondo = new ImageIcon("FondoEliminar.png");
+        imagenFondo = new ImageIcon("FondoMostrar.png");
         JLabel etiquetaFondo = new JLabel();
         etiquetaFondo.setBounds(0, 0, this.getWidth(), this.getHeight());
         etiquetaFondo.setIcon(new ImageIcon(imagenFondo.getImage().getScaledInstance(etiquetaFondo.getWidth(), etiquetaFondo.getHeight(), Image.SCALE_SMOOTH)));
