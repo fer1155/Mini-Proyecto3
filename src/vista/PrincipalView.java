@@ -25,7 +25,7 @@ public class PrincipalView extends JFrame{
     //Constructor de la ventana Principal
     public PrincipalView(){
         this.setTitle("Directorio");
-        this.setBounds(400, 15, 500, 700);
+        this.setBounds(400, 10, 500, 700);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         iniciarComponentes();

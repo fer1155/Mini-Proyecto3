@@ -35,7 +35,7 @@ public class MostrarPersonaView extends JFrame{
         setResizable(false);
         iniciarComponentes();
     }
-
+    
     private void iniciarComponentes() {
         establecerLayeredPanel();
         establecerPanel();
@@ -73,7 +73,7 @@ public class MostrarPersonaView extends JFrame{
     }
         
     private void establecerTitulo() {
-        titulo = new JLabel("Buscar Usuarios");
+        titulo = new JLabel("Mostrar Usuarios");
         titulo.setBounds(95, 20, 400, 80);
         Color colorLetra = new Color(255, 255, 255);
         titulo.setForeground(colorLetra);
@@ -129,7 +129,7 @@ public class MostrarPersonaView extends JFrame{
     }
     
     private void establecerBtonMostrarPersona() {
-        botonMostrarPersona = new JButton("Buscar persona por ID");
+        botonMostrarPersona = new JButton("Mostrar persona por ID");
         botonMostrarPersona.setFocusPainted(false);
         botonMostrarPersona.setBounds(150, 210, 240, 55);  
         botonMostrarPersona.setForeground(Color.BLACK);
@@ -184,4 +184,5 @@ public class MostrarPersonaView extends JFrame{
     public void limpiarCampos(){
         cajaTextoId.setText("");
     }
+    
 }

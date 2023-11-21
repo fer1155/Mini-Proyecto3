@@ -23,21 +23,12 @@ public class IPersonaDaoImplementation implements IPersonaDao {
     public boolean addPersona(Persona persona) {
         if("Estudiante".equals(persona.getTipo())){
             estudiantes.add(persona);
-            for(Persona elemento:estudiantes){
-                System.out.println(elemento);
-            }
             return true;
         }else if("Profesor".equals(persona.getTipo())){
             profesores.add(persona);
-            for(Persona elemento:profesores){
-                System.out.println(elemento);
-            }
             return true;
         }else if("Empleado".equals(persona.getTipo())){
             empleados.add(persona);
-            for(Persona elemento:empleados){
-                System.out.println(elemento);
-            }
             return true;
         }
         return false;

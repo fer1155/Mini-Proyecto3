@@ -40,7 +40,7 @@ public class MostrarPersonaController {
                 JOptionPane.showMessageDialog(vista.obtenerPanel(), vista.ventanaEmergente(textoAMostrar), "Infomacion General", JOptionPane.PLAIN_MESSAGE);
             }
             
-            if(e.getActionCommand().equalsIgnoreCase("Buscar persona por ID")){
+            if(e.getActionCommand().equalsIgnoreCase("Mostrar persona por ID")){
                 mostrarCampos();
             }
             
