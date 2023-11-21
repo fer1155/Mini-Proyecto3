@@ -1,3 +1,12 @@
+/*
+Miniproyecto No. 3
+
+Fernando Cardona - 2241381
+Oscar Mario Muñoz - 2242481
+Santiago Alzate   - 2242274
+
+Grupo de FPOE: 80
+*/
 package controlador;
 
 import java.awt.event.ActionEvent;
@@ -33,24 +42,27 @@ public class ActualizarPersonaController {
             }
             
             if(e.getActionCommand().equalsIgnoreCase("Buscar")){
-                personaBuscada = modelo.getPersona(vista.getCajaDeTextoIdV1());
-                
-                if(personaBuscada != null){
-                    JOptionPane.showMessageDialog(vista.obtenerPanel(), "Se encontro la persona con id " + vista.getCajaDeTextoIdV1(), "Info", JOptionPane.INFORMATION_MESSAGE);
-                    vista.limpiarComponentes();
-                    vista.mostrarComponentesV1(false);
-                    //vista.setTamanoVentana(900,600);
-                    vista.establecerDatosDeLaPersona(personaBuscada.getNombreCompleto(), personaBuscada.getNumId(), personaBuscada.getFechaDeNacimiento(), personaBuscada.getDireccion(), personaBuscada.getDireccion2(), personaBuscada.getTelefono(), personaBuscada.getTipoTelefono(), personaBuscada.getTipo(), personaBuscada.getTelefono2(), personaBuscada.getTipoTelefono2(), personaBuscada.getTelefono3(), personaBuscada.getTipoTelefono3());
-                    vista.mostrarComponentesV2(true);
-                
+                if("".equals(vista.getCajaDeTextoIdV1())){
+                    JOptionPane.showMessageDialog(vista.obtenerPanel(), "Porfavor rellene el ID", "Alerta", JOptionPane.WARNING_MESSAGE);
                 }else{
-                    JOptionPane.showMessageDialog(vista.obtenerPanel(), "No se encuentra la persona con el Id " + vista.getCajaDeTextoIdV1(), "Alerta", JOptionPane.WARNING_MESSAGE);
-                    vista.limpiarComponentes();
-                }
+                    personaBuscada = modelo.getPersona(vista.getCajaDeTextoIdV1());
+                
+                    if(personaBuscada != null){
+                        JOptionPane.showMessageDialog(vista.obtenerPanel(), "¡Se encontro exitosamente a la persona con ID: " + vista.getCajaDeTextoIdV1() + "!", "Info", JOptionPane.INFORMATION_MESSAGE);
+                        vista.limpiarComponentes();
+                        vista.mostrarComponentesV1(false);
+                        vista.establecerDatosDeLaPersona(personaBuscada.getNombreCompleto(), personaBuscada.getNumId(), personaBuscada.getFechaDeNacimiento(), personaBuscada.getDireccion(), personaBuscada.getDireccion2(), personaBuscada.getTelefono(), personaBuscada.getTipoTelefono(), personaBuscada.getTipo(), personaBuscada.getTelefono2(), personaBuscada.getTipoTelefono2(), personaBuscada.getTelefono3(), personaBuscada.getTipoTelefono3());
+                        vista.mostrarComponentesV2(true);
+
+                    }else{
+                        JOptionPane.showMessageDialog(vista.obtenerPanel(), "No se encuentra la persona con ID: " + vista.getCajaDeTextoIdV1(), "Alerta", JOptionPane.WARNING_MESSAGE);
+                        vista.limpiarComponentes();
+                    }
+                }  
             }
             
             if(e.getActionCommand().equalsIgnoreCase("Atras")){
-                int opcion = JOptionPane.showConfirmDialog(vista.obtenerPanel(), "¿Desea terminar de actualizar?", "Pregunta", JOptionPane.YES_NO_OPTION);
+                int opcion = JOptionPane.showConfirmDialog(vista.obtenerPanel(), "¿Desea salir de la ventana actualizar?", "Pregunta", JOptionPane.YES_NO_OPTION);
 
                 if (opcion == JOptionPane.YES_OPTION) {
                     vista.mostrarComponentesV1(true);
@@ -58,40 +70,16 @@ public class ActualizarPersonaController {
                 }
             }
             
-            /*
-            if(e.getActionCommand().equalsIgnoreCase("Actualizar")){
-                if(verificarCamposVacios()){
-                    JOptionPane.showMessageDialog(vista.obtenerPanel(), "No ha llenado algun campo aun", "Alerta", JOptionPane.ERROR_MESSAGE);
-                }else{
-                    if(verificarIdRepetido(vista.getCajaDeTextoIdV2()) == true){
-                        JOptionPane.showMessageDialog(vista.obtenerPanel(), "El id esta repetido, ingrese otro", "Alerta", JOptionPane.ERROR_MESSAGE);
-                        vista.limpiarComponentes();
-                    }else{
-                        int opcion = JOptionPane.showConfirmDialog(vista.obtenerPanel(), "¿Esta seguro de los datos?", "Pregunta", JOptionPane.YES_NO_OPTION);
-
-                        if (opcion == JOptionPane.YES_OPTION) {
-                            String tipo = personaBuscada.getTipo();
-                            if(modelo.actualizarPersona(cambiarDatos(), tipo, personaBuscada.getNumId())){
-                                JOptionPane.showMessageDialog(vista.obtenerPanel(), "Actualizacion exitosa", "Alerta", JOptionPane.INFORMATION_MESSAGE);
-                                vista.limpiarComponentes();
-                                vista.mostrarComponentesV1(true);
-                                vista.mostrarComponentesV2(false);
-                            }
-                        }
-                    }
-                }
-            }*/
-            
             if(e.getActionCommand().equalsIgnoreCase("Actualizar")){
                 if(verificarIdRepetido(vista.getCajaDeTextoIdV2()) == true){
-                    JOptionPane.showMessageDialog(vista.obtenerPanel(), "El id esta repetido, ingrese otro", "Alerta", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(vista.obtenerPanel(), "El ID ya esta registrado, ingrese otro", "Alerta", JOptionPane.ERROR_MESSAGE);
                 }else{
-                    int opcion = JOptionPane.showConfirmDialog(vista.obtenerPanel(), "¿Esta seguro de los datos?", "Pregunta", JOptionPane.YES_NO_OPTION);
+                    int opcion = JOptionPane.showConfirmDialog(vista.obtenerPanel(), "¿Estas seguro de los datos a actualizar?", "Pregunta", JOptionPane.YES_NO_OPTION);
 
                     if (opcion == JOptionPane.YES_OPTION) {
                         String tipo = personaBuscada.getTipo();
                         if(modelo.actualizarPersona(cambiarDatos(), tipo, personaBuscada.getNumId())){
-                            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Actualizacion exitosa", "Alerta", JOptionPane.INFORMATION_MESSAGE);
+                            JOptionPane.showMessageDialog(vista.obtenerPanel(), "¡Actualizacion exitosa!", "Alerta", JOptionPane.INFORMATION_MESSAGE);
                             vista.limpiarComponentes();
                             vista.mostrarComponentesV1(true);
                             vista.mostrarComponentesV2(false);

@@ -1,3 +1,13 @@
+/*
+Miniproyecto No. 3
+
+Fernando Cardona - 2241381
+Oscar Mario Muñoz - 2242481
+Santiago Alzate   - 2242274
+
+Grupo de FPOE: 80
+*/
+
 package vista;
 
 import java.awt.Color;
@@ -25,7 +35,7 @@ public class PrincipalView extends JFrame{
     //Constructor de la ventana Principal
     public PrincipalView(){
         this.setTitle("Directorio");
-        this.setBounds(400, 15, 500, 700);
+        this.setBounds(400, 10, 500, 700);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         iniciarComponentes();

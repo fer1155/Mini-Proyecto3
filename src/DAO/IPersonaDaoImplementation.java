@@ -1,3 +1,12 @@
+/*
+Miniproyecto No. 3
+
+Fernando Cardona - 2241381
+Oscar Mario Muñoz - 2242481
+Santiago Alzate   - 2242274
+
+Grupo de FPOE: 80
+*/
 package DAO;
 
 import java.util.ArrayList;
@@ -23,21 +32,12 @@ public class IPersonaDaoImplementation implements IPersonaDao {
     public boolean addPersona(Persona persona) {
         if("Estudiante".equals(persona.getTipo())){
             estudiantes.add(persona);
-            for(Persona elemento:estudiantes){
-                System.out.println(elemento);
-            }
             return true;
         }else if("Profesor".equals(persona.getTipo())){
             profesores.add(persona);
-            for(Persona elemento:profesores){
-                System.out.println(elemento);
-            }
             return true;
         }else if("Empleado".equals(persona.getTipo())){
             empleados.add(persona);
-            for(Persona elemento:empleados){
-                System.out.println(elemento);
-            }
             return true;
         }
         return false;

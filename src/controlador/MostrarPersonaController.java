@@ -1,3 +1,12 @@
+/*
+Miniproyecto No. 3
+
+Fernando Cardona - 2241381
+Oscar Mario Muñoz - 2242481
+Santiago Alzate   - 2242274
+
+Grupo de FPOE: 80
+*/
 package controlador;
 
 import java.awt.event.ActionEvent;
@@ -40,7 +49,7 @@ public class MostrarPersonaController {
                 JOptionPane.showMessageDialog(vista.obtenerPanel(), vista.ventanaEmergente(textoAMostrar), "Infomacion General", JOptionPane.PLAIN_MESSAGE);
             }
             
-            if(e.getActionCommand().equalsIgnoreCase("Buscar persona por ID")){
+            if(e.getActionCommand().equalsIgnoreCase("Mostrar persona por ID")){
                 mostrarCampos();
             }
             
