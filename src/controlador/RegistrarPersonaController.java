@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 import modelo.Empleado;
 import modelo.Estudiante;
@@ -48,34 +47,34 @@ public class RegistrarPersonaController {
     }
     
     private boolean verificarCamposVacios(){
-        if(vista.getCajaDeTextoNombre().isEmpty()){
-            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Rellene el nombre porfavor", "Alerta", JOptionPane.WARNING_MESSAGE);
+        if("".equals(vista.getComboBoxTipoDePersona())){
+            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Falta ingresar el tipo de persona, por favor rellenelo", "Alerta", JOptionPane.WARNING_MESSAGE);
+            return true;
+        }else if(vista.getCajaDeTextoNombre().isEmpty()){
+            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Falta ingresar el nombre, por favor rellenelo", "Alerta", JOptionPane.WARNING_MESSAGE);
             return true;
         }else if(vista.getCajaDeTextoId().isEmpty()){
-            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Rellene el id porfavor", "Alerta", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Falta ingresar el ID, por favor rellenelo", "Alerta", JOptionPane.WARNING_MESSAGE);
             return true;
         }else if(vista.getCajaDeTextoDireccion().isEmpty()){
-            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Rellene la direccion porfavor", "Alerta", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Falta ingresar la direccion, por favor rellenela", "Alerta", JOptionPane.WARNING_MESSAGE);
             return true;
         }else if(vista.getCajaDeTextoTelefono1().isEmpty()){
-            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Rellene el telefono porfavor", "Alerta", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Falta ingresar el telefono, por favor rellenelo", "Alerta", JOptionPane.WARNING_MESSAGE);
             return true;
         }else if("".equals(vista.getComboBoxTipoDeTelefono1())){
-            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Rellene el tipo de telefono porfavor", "Alerta", JOptionPane.WARNING_MESSAGE);
-            return true;
-        }else if("".equals(vista.getComboBoxTipoDePersona())){
-            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Rellene el tipo de persona porfavor", "Alerta", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Falta ingresar el tipo de telefono, por favor rellenelo", "Alerta", JOptionPane.WARNING_MESSAGE);
             return true;
         }
         
         if(!"".equals(vista.getCajaDeTextoTelefono2())){
             if("".equals(vista.getComboBoxTipoDeTelefono2())){
-                JOptionPane.showMessageDialog(vista.obtenerPanel(), "Rellene el tipo de telefono del telefono 2 porfavor", "Alerta", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(vista.obtenerPanel(), "Falta ingresar tipo de telefono 2, por favor rellenelo", "Alerta", JOptionPane.WARNING_MESSAGE);
                 return true;
             }
         }else if(!"".equals(vista.getCajaDeTextoTelefono3())){
             if("".equals(vista.getComboBoxTipoDeTelefono3())){
-                JOptionPane.showMessageDialog(vista.obtenerPanel(), "Rellene el tipo de telefono del telefono 3 porfavor", "Alerta", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(vista.obtenerPanel(), "Falta ingresar tipo de telefono 3, por favor rellenelo", "Alerta", JOptionPane.WARNING_MESSAGE);
                 return true;
             }
         }
@@ -89,18 +88,18 @@ public class RegistrarPersonaController {
             if("ESTUDIANTE".equals(tipoDePersona)){
                 Estudiante estudiante = new Estudiante(vista.getCajaDeTextoNombre(), vista.getCajaDeTextoId(), vista.getCajaDeTextoFechaDeNacimiento(), vista.getCajaDeTextoDireccion(), vista.getCajaDeTextoDireccion2(), vista.getCajaDeTextoTelefono1(), vista.getComboBoxTipoDeTelefono1(), vista.getCajaDeTextoTelefono2(), vista.getComboBoxTipoDeTelefono2(), vista.getCajaDeTextoTelefono3(), vista.getComboBoxTipoDeTelefono3());
                 modelo.registrar(estudiante);
-                JOptionPane.showMessageDialog(vista.obtenerPanel(), "Se registro correctamente al estudiante", "Todo claro", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(vista.obtenerPanel(), "¡Se registró con éxito al estudiante!", "Validacion", JOptionPane.INFORMATION_MESSAGE);
             }else if("PROFESOR".equals(tipoDePersona)){
                 Profesor profesor = new Profesor(vista.getCajaDeTextoNombre(), vista.getCajaDeTextoId(), vista.getCajaDeTextoFechaDeNacimiento(), vista.getCajaDeTextoDireccion(),vista.getCajaDeTextoDireccion2(), vista.getCajaDeTextoTelefono1(), vista.getComboBoxTipoDeTelefono1(), vista.getCajaDeTextoTelefono2(), vista.getComboBoxTipoDeTelefono2(), vista.getCajaDeTextoTelefono3(), vista.getComboBoxTipoDeTelefono3());
                 modelo.registrar(profesor);
-                JOptionPane.showMessageDialog(vista.obtenerPanel(), "Se registro correctamente al Profesor", "Todo claro", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(vista.obtenerPanel(), "¡Se registró con éxito al profesor!", "Validacion", JOptionPane.INFORMATION_MESSAGE);
             }else if("EMPLEADO".equals(tipoDePersona)){
                 Empleado empleado = new Empleado(vista.getCajaDeTextoNombre(), vista.getCajaDeTextoId(), vista.getCajaDeTextoFechaDeNacimiento(), vista.getCajaDeTextoDireccion(),vista.getCajaDeTextoDireccion2(), vista.getCajaDeTextoTelefono1(), vista.getComboBoxTipoDeTelefono1(), vista.getCajaDeTextoTelefono2(), vista.getComboBoxTipoDeTelefono2(), vista.getCajaDeTextoTelefono3(), vista.getComboBoxTipoDeTelefono3());
                 modelo.registrar(empleado);
-                JOptionPane.showMessageDialog(vista.obtenerPanel(), "Se registro correctamente al Empleado", "Todo claro", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(vista.obtenerPanel(), "¡Se registró con éxito al empleado!", "Validacion", JOptionPane.INFORMATION_MESSAGE);
             }
         }else{
-            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Ya existe el id suministrado", "Alerta", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(vista.obtenerPanel(), "Ya existe el ID suministrado", "Alerta", JOptionPane.WARNING_MESSAGE);
         }
     }
     
