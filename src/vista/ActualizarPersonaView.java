@@ -1,3 +1,13 @@
+/*
+Miniproyecto No. 3
+
+Fernando Cardona - 2241381
+Oscar Mario Muñoz - 2242481
+Santiago Alzate   - 2242274
+
+Grupo de FPOE: 80
+*/
+
 package vista;
 
 import java.awt.Color;
@@ -55,7 +65,6 @@ public class ActualizarPersonaView extends JFrame{
         width = 900;
         height = 450;
         this.setBounds(200, 50,900 ,600);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         iniciarComponentes();
     }
